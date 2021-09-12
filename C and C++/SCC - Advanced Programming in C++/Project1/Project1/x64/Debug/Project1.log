@@ -1,0 +1,5 @@
+﻿  Source_ch10_pt1-2 (1).cpp
+\\ac.stchas.edu\userfiles\folderredirection\rc215088\downloads\source_ch10_pt1-2 (1).cpp(21): warning C4101: 'tempNum': unreferenced local variable
+\\ac.stchas.edu\userfiles\folderredirection\rc215088\downloads\source_ch10_pt1-2 (1).cpp(21): warning C4101: 'dayNum': unreferenced local variable
+  Project1.vcxproj -> \\ac.stchas.edu\userfiles\folderredirection\rc215088\documents\visual studio 2015\Projects\Project1\x64\Debug\Project1.exe
+  Project1.vcxproj -> \\ac.stchas.edu\userfiles\folderredirection\rc215088\documents\visual studio 2015\Projects\Project1\x64\Debug\Project1.pdb (Partial PDB)

@@ -1,4 +1,8 @@
 --------------------------------------------------------------------------------
+-- Modified from open source file for use in HWSW Co-design final project
+-- Originally used as a reference, added in completely as part of debugging
+--
+--------------------------------------------------------------------------------
 --
 --   FileName:         i2c_master.vhd
 --   Dependencies:     none

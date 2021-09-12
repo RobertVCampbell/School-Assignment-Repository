@@ -1,0 +1,6 @@
+﻿  Source.cpp
+\\ac.stchas.edu\userfiles\folderredirection\rc215088\documents\cpt-281\ch14_proj-1\ch14_proj-1\source.cpp(16): warning C4101: 'cm': unreferenced local variable
+\\ac.stchas.edu\userfiles\folderredirection\rc215088\documents\cpt-281\ch14_proj-1\ch14_proj-1\source.cpp(15): warning C4101: 'in': unreferenced local variable
+\\ac.stchas.edu\userfiles\folderredirection\rc215088\documents\cpt-281\ch14_proj-1\ch14_proj-1\source.cpp(35): warning C4101: 'x': unreferenced local variable
+  Ch14_Proj-1.vcxproj -> \\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Ch14_Proj-1\Debug\Ch14_Proj-1.exe
+  Ch14_Proj-1.vcxproj -> \\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Ch14_Proj-1\Debug\Ch14_Proj-1.pdb (Partial PDB)

@@ -1,0 +1,13 @@
+﻿Build started 9/6/2017 12:21:15 PM.
+     1>Project "\\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Class3\Ch10_pt1-1\Ch10_pt1-1\Ch10_pt1-1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "CH10_pt2-1_Source.cpp"
+         CH10_pt2-1_Source.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Class3\Ch10_pt1-1\Debug\Ch10_pt2-1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Class3\Ch10_pt1-1\Debug\Ch10_pt2-1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Class3\Ch10_pt1-1\Debug\Ch10_pt2-1.lib" /MACHINE:X86 "Debug\CH10_pt2-1_Source.obj"
+         Ch10_pt1-1.vcxproj -> \\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Class3\Ch10_pt1-1\Debug\Ch10_pt2-1.exe
+     1>Done Building Project "\\ac.stchas.edu\userfiles\FolderRedirection\rc215088\Documents\CPT-281\Class3\Ch10_pt1-1\Ch10_pt1-1\Ch10_pt1-1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.65
