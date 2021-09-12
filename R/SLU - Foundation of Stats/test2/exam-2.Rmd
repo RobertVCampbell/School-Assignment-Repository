@@ -1,0 +1,215 @@
+---
+title: "Exam 2"
+author: "Robert Campbell"
+date: "Friday, April 16, 2021"
+---
+
+Place your answers into this markdown document, knit it, and hand in the result as a PDF.
+There are 10 questions, each worth 10 points.
+
+You may use R, the internet, and any reference material,
+but do not work together and do not get help (except from Dr. Clair).
+
+## Honor Pledge
+The work I have submitted represents my own effort. While working on this exam, I did not communicate in any form with individuals other than the instructor.
+
+Signed: Robert V. Campbell
+
+
+-------------------------------
+
+```{r setup, warning=FALSE}
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(stringr))
+shoes <- read.csv("http://mathstat.slu.edu/~clair/stat/data/shoes.csv")
+
+```
+
+## Problem 1
+This problem and the next use the data `Arbuthnot` from the `HistData` library.
+
+Find all the years where death by Plague was at least 20\% of all Mortality.
+```{r}
+Arb<-HistData::Arbuthnot
+Arb %>% group_by(Year) %>% summarize(DeathRatio = Plague/Mortality) %>% filter(DeathRatio >= .20)
+```
+
+
+
+## Problem 2
+Using `Arbuthnot`, make a plot showing the Mortality each Year, with Year on the x-axis.
+Set the size and color of your points to be the Plague variable.
+
+Small amount of extra credit: make the color go from black to red instead of black to blue to really make the plague look bad.
+
+```{r}
+Arb %>% ggplot(aes(x=Year,y=Mortality,size=Plague, color=Plague)) + geom_point() + 
+  scale_color_gradient(low="black", high="red")
+```
+
+
+
+## Problem 3
+This problem uses the `bechdel` data from the `fosdata` library.  Each observation is a movie, and the `binary` variable tells whether that movie passed or failed the "Bechdel Test".
+A movie's profit (in adjusted 2013 dollars) is the `intgross_2013` international gross minus the `budget_2013` budget.
+
+Of the 15 least profitable movies in the `bechdel` dataset, what is the only one to pass the Bechdel test?
+
+```{r, message=FALSE,warning=FALSE}
+fosdata::bechdel %>% mutate(profit=(intgross_2013 - budget_2013)) %>%
+  group_by(title) %>% summarize(profit, binary) %>% arrange(profit) %>%
+  head(15) %>% filter(binary=="PASS")
+```
+
+
+
+## Problem 4
+Continue using `fosdata::bechdel`.
+
+Make a line graph showing total profit of all movies added together for each year.
+```{r}
+fosdata::bechdel %>% mutate(profit=(intgross_2013 - budget_2013)) %>%
+  group_by(year) %>% summarize(TotalProfit=sum(profit,na.rm=TRUE)) %>% 
+  ggplot(aes(x=year,y=TotalProfit)) + geom_line()
+```
+
+
+
+## Problem 5
+Continue using `fosdata::bechdel`.
+
+a. There are 15 movies with the word "Girl" as part of the title.  What percentage of these passed the Bechdel test?
+
+```{r}
+fosdata::bechdel %>% filter(str_detect(title, "Girl")) %>% group_by(binary) %>%
+  summarize(ratio = n()/15)
+```
+
+b. There are 7 movies with the word "Boy" as part of the title (watch out for "Boynton Beach Club", which you shouldn't count).  What percentage of these passed the Bechdel test?
+```{r}
+fosdata::bechdel %>% filter(str_detect(title, "Boy")) %>% group_by(binary) %>%
+  summarize(ratio = n()/7)
+```
+
+
+
+## Problem 6
+
+How much bigger is the tail of a $t$ distribution than the normal distribution?
+
+a. Compute $P(Z > 4)$ where $Z$ is the standard normal random variable.
+```{r}
+1-pnorm(4)
+```
+
+b. Compute $P(T > 4)$ where $T$ has a $t$ distribution with 2 degrees of freedom.
+```{r}
+1-pt(4,df=2)
+```
+
+c. Compute the ratio $P(T > 4) / P(Z > 4)$.
+```{r}
+(1-pnorm(4))/(1-pt(4,df=2))
+```
+
+
+
+
+## Problem 7
+The data set `faithful` is built in to R.  It has a variable `waiting` which gives the time between eruptions of the Old Faithful geyser in Yellowstone National Park, collected in August 1985.
+
+a. Make a histogram of the `waiting` variable.  How would you describe this distribution?
+```{r}
+hist(faithful$waiting)
+```
+Not normal
+
+Let $X_1, \dotsc, X_n$ be a sample of size $n$ of the `waiting` variable and $\bar{X}$ the sample mean, as usual.
+
+
+b. Simulate and plot the $\bar{X}$ distribution when $n = 2$.  Does it appear to be normal?
+Not normal
+```{r}
+pop <- faithful$waiting
+sim <- replicate(10000,{
+  x <- sample(pop,2,replace=TRUE); mean(x)
+})
+plot(density(sim))
+```
+
+c. Simulate and plot the $\bar{X}$ distribution when $n = 5$.  Does it appear to be normal?
+normal
+
+```{r}
+sim <- replicate(10000,{
+  x <- sample(pop,5,replace=TRUE); mean(x)
+})
+plot(density(sim))
+```
+
+d. Simulate and plot the $\bar{X}$ distribution when $n = 15$.  Does it appear to be normal?
+Normal
+
+```{r}
+sim <- replicate(10000,{
+  x <- sample(pop,15,replace=TRUE); mean(x)
+})
+plot(density(sim))
+```
+
+
+--------
+The next three problems use the data set `shoes.csv` which is available on our course data page.
+
+```{r}
+shoes <- read.csv("http://mathstat.slu.edu/~clair/stat/data/shoes.csv")
+```
+
+Studies of running mechanics often use a standardized lab shoe, ostensibly to reduce variance between subjects; however, this may induce unnatural running mechanics.
+Hunter et. al. (2020) tested runners in both lab shoes and in their own personal shoes. 
+
+## Problem 8
+a. Give the 95% confidence interval for the mean speed of male runners in their own shoes.
+[3.149, 3.552]
+```{r}
+male<-shoes %>% filter(Sex=="M")
+t.test(male$Speed.own)
+```
+
+
+b. Give the 95% confidence interval for the mean speed of female runners in their own shoes.
+[3.019,3.282]
+```{r}
+female<-shoes %>% filter(Sex=="F")
+t.test(female$Speed.own)
+```
+
+
+
+## Problem 9
+The variable `Speed.own` gives the runner's speed (while wearing their own shoes).
+
+Test for a difference in mean speed between the male and female athletes.  State your conclusion with a $p$-value.
+
+With a p-value: 0.09341, there is not a significant difference based on gender of a runner's speed in their own shoes
+```{r}
+t.test(Speed.own ~ Sex, data=shoes)
+```
+
+
+
+
+## Problem 10
+The vertical average loading rate (in bodyweight / second) tells how much load athletes experience while running.
+This measurement is in the `Loading.own` and `Loading.lab` variables in the data set `shoes.csv`, which is on our course data page.
+
+Test for a difference in mean loading rate between the lab shoe and the runner's own shoe.  State your conclusion with a $p$-value.
+
+With a p-value of 0.00683 there is a significant difference in loading rate with a runner's own shoe vs the lab's
+
+```{r}
+t.test(shoes$Loading.own, shoes$Loading.lab, paired=TRUE)
+```
+
+

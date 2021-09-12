@@ -1,0 +1,39 @@
+1) Robert Campbell
+2)
+Bits 31 through 8 are constant
+Bits 7 through 0 change
+
+3)
+152.221.54.0/28
+
+4)
+Network address
+1001 1000 0100 1110 0110  
+Host Identifier
+0101 0010 0011
+
+5)
+165.134.0.0/16
+
+6)
+16 bits in SLU's host identifier
+65,536 IP addresses
+
+7)
+not c
+208 is 1101 0000
+1101 1111 is 223, and the highest value in this byte
+
+Only B and C belong to the subnet
+
+8)
+A, B, and D match
+
+9)
+20.40.80.0/24
+
+10)
+A) Ethernet 0
+B) Ethernet 1
+C) Ethernet 2
+D) Ethernet 5

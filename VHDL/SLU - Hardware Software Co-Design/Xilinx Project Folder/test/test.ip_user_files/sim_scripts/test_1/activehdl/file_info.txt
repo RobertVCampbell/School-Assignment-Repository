@@ -1,0 +1,2 @@
+test_1_test_0_0.vhd,vhdl,xil_defaultlib,../../../bd/test_1/ip/test_1_test_0_0/sim/test_1_test_0_0.vhd,
+test_1.vhd,vhdl,xil_defaultlib,../../../bd/test_1/sim/test_1.vhd,

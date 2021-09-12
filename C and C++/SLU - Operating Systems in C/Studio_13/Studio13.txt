@@ -1,0 +1,73 @@
+1) Robert Campbell
+
+2)
+Provided number '7' is prime.
+Provided number '23' is prime.
+Provided number '101' is prime.
+Provided number '982451653' is prime.
+Provided number '3' is prime.
+Provided number '4' is not prime.
+Provided number '10' is not prime.
+[campbellrobert@hopper2 campbellrobert]$
+
+3)
+Provided number '982451653' is prime.
+
+real    0m0.007s
+user    0m0.001s
+sys     0m0.002s
+
+4)
+Prime numbers from 1 - 100 are:
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 
+[campbellrobert@hopper2 Studio_13]$ 
+
+5)
+Because each number can be tested without any information from any of the other numbers.
+
+6)
+Testing different divisors are not completely independent because they are all dividing
+the same number and writing their result to the same location.
+
+7)
+[campbellrobert@hopper2 Studio_13]$ ./paraprime
+Prime numbers from 1 - 100 are:
+79, 83, 31, 61, 67, 29, 59, 71, 37, 7, 97, 47, 53, 23, 89, 73, 17, 19, 2, 3, 5, 11, 41, 43, 13, 
+[campbellrobert@hopper2 Studio_13]$ ./prime
+Prime numbers from 1 - 100 are:
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 
+[campbellrobert@hopper2 Studio_13]$ 
+
+The answers are the same, but the parallel version is out of order.
+
+8)
+N = 1000000
+[campbellrobert@hopper2 Studio_13]$ time ./prime
+
+real    0m0.208s
+user    0m0.201s
+sys     0m0.003s
+[campbellrobert@hopper2 Studio_13]$ time ./paraprime
+
+real    0m0.038s
+user    0m0.392s
+sys     0m0.020s
+[campbellrobert@hopper2 Studio_13]$ 
+
+N = 20000000
+[campbellrobert@hopper2 Studio_13]$ time ./prime
+
+real    0m10.598s
+user    0m10.531s
+sys     0m0.003s
+[campbellrobert@hopper2 Studio_13]$ time ./paraprime
+
+real    0m0.977s
+user    0m12.532s
+sys     0m0.024s
+[campbellrobert@hopper2 Studio_13]$ 
+
+9) This implementation is much easier and more direct on the programming side, though I don't know about the underlying implementation.
+    For pthreads, we would have to determine the number of threads that would be wanted and have the for loop increment by the number of threads.
+        Inside the forloop would have to open and close that many threads, with each one testing one number each.
+

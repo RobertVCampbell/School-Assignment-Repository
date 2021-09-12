@@ -1,0 +1,141 @@
+---
+title: 'Homework #01'
+author: "Robert Campbell"
+date: "04 Feb 2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, echo=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+suppressWarnings(suppressMessages(library(dplyr)))
+```
+
+## Chapter 01
+
+### Problem 01 
+  a. x*2 = {2,4,6}
+  b. x*y = {6,10,12}
+  c. x[1]*y[2] = 5
+  ```{r, echo=FALSE}
+  x <- c(1,2,3)
+  y <- c(6,5,4)
+  x*2
+  x*y
+  x[1]*y[2]
+  ```
+
+### Problem 04
+```{r, echo=FALSE}
+p <- seq(from = 0, to = 1, by=0.2)
+plot(p,p*(1-p),type='l', main="04 - B")
+```
+```{r, echo=FALSE}
+p <- seq(from = 0, to = 1, by=0.01)
+plot(p,p*(1-p),type='l', main="04 - C")
+
+```
+
+### Problem 05
+```{r, echo=FALSE}
+z <- seq(from=1,to=100,by=1)
+z^2
+```
+
+### Problem 07
+  b.
+  ```{r, echo=FALSE}
+  mean(rivers)
+  sd(rivers)
+  ```
+  c.
+  ```{r, echo=FALSE}
+  hist(rivers)
+  ```
+  d.
+  ```{r, echo=FALSE}
+  summary(rivers)
+  ```
+  e.
+  Shortest:
+  ```{r, echo=FALSE}
+  min(rivers)
+  ```
+  Longest:
+  ```{r, echo=FALSE}
+  max(rivers)
+  ```
+  f.
+  ```{r, echo=FALSE}
+  rivers[rivers>1000]
+  ```
+
+### Problem 08
+  a. 153 observations of 6 variables
+  b. {Ozone, Solar.R, Wind, Temp, Month, Day}
+  c. {int, int, num, int, int, int}
+  d. The datatypes make sense, worst case they could have been stored as strings or the num and int types could be switched. You would lose data, waste space, or lose functionality if they were changed.
+
+### Problem 10
+  a. 12
+  b. Cars that displace more than 150 cu.ins. and get more than 20 miles per gallon
+  c.
+  ```{r, echo=FALSE}
+  mtcars[mtcars$gear==4 & mtcars$am==1,]
+  ```
+  d.
+  ```{r, echo=FALSE}
+  mtcars[mtcars$gear==4 | mtcars$am==1,]
+  ```
+  e.
+  ```{r, echo=FALSE}
+  mean(mtcars[mtcars$carb==2,]$mpg)
+  ```
+
+### Problem 12
+  ```{r, echo=FALSE}
+  # import hotdogs
+  hot_dogs<-fosdata::hot_dogs
+  ```
+  a. 3 variables: {Factor, int, int}
+  b. {"Beef", "Meat", 'Poultry"}
+  c. 645mg
+  d. 
+  ```{r, echo=FALSE}
+  mean(hot_dogs[hot_dogs$type == "Beef",]$calories)
+  ```
+  
+### Problem 13
+```{r, echo=FALSE}
+# Import DrinksWages
+DrinksWages<- HistData::DrinksWages
+```
+  a.  70 observations of 6 variables of types:
+  {Factor, Factor, int, int, num, int}
+  b. A factory worker
+  c. 
+  ```{r, echo=FALSE}
+  sum(DrinksWages$n)
+  ```
+  d. 
+  ```{r, echo=FALSE}
+  sum(DrinksWages$n * DrinksWages$wage)/sum(DrinksWages$n)
+  ```
+
+### Problem 15 a-e
+```{r,echo=FALSE}
+bechdel <- fosdata::bechdel
+```
+  a. 1794
+  b. 991
+  c.
+  ```{r,echo=FALSE}
+  table(bechdel$year)
+  ```
+  d. 2010
+  e. 5

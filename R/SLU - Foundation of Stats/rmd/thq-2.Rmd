@@ -1,0 +1,96 @@
+---
+title: "Take Home Quiz 2"
+author: "Robert Campbell"
+date: "Due 1:00pm Monday, March 29"
+output: pdf_document
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(babynames)
+library(stringr)
+```
+
+This quiz should take you approximately 25 minutes. 
+Place your answers into this markdown document, knit it, and hand in the result as a PDF.
+Just answering is not enough - you need to include the R code that produces your answer.
+
+You may use R, the internet, and any reference material,
+but do not work together and do not get help (except from Dr. Clair).
+
+### Problem 1
+This problem uses the `babynames` data from the `babynames` library.
+
+a. Find the most popular girl's name in the year 2000.
+  Emily
+```{r}
+babynames %>% filter(sex=="F", year==2000) %>% arrange(desc(n)) %>% head()
+```
+
+b. Find the most popular girl's name in the year 2000 that starts with "Q".
+  Quinn
+```{r}
+babynames %>% filter(sex=="F", year==2000) %>% filter(str_detect(name,"^Q"))%>%
+  arrange(desc(n)) %>% head()
+```
+
+### Problem 2
+Continue using `babynames`.
+Not all babies are counted in this data set - it only includes names that are given to five or more babies.
+The `prop` variable gives the percentage of all babies born that year with the given name.
+
+a. What percentage of all female babies born in 2000 are included in this data?  (Add up the `prop` variable for all female babies born in 2000.)
+  91%
+```{r}
+babynames %>% filter(sex=="F", year==2000) %>% summarise(population = sum(prop))
+```
+b. How many total female babies born in 2000 are included in this data?
+  1,815,110
+```{r}
+babynames %>% filter(sex=="F", year==2000) %>% summarise(population = sum(n))
+```
+c. Use parts a and b to estimate the total number of female babies born in 2000 in the U.S.
+  1,994,626
+```{r}
+babynames %>% filter(sex=="F", year==2000) %>% summarise(population = (sum(n)/sum(prop)))
+```
+
+### Problem 3
+The data set `storms` is included in the `dplyr` package.  It contains information about 198 tropical storms.
+
+a. Use ggplot to produce a histogram of the `wind` speeds in this data set.
+Fill your bars using the category variable so you can see the bands of color corresponding to the different storm categories.
+```{r}
+storms <- dplyr::storms
+storms %>% ggplot(aes(x=wind,fill=category)) + geom_histogram()
+```
+b. Repeat part (a) but make a histogram of the `pressure` variable.  You should observe that high category storms have low pressure.
+```{r}
+storms %>% ggplot(aes(x=pressure,fill=category)) + geom_histogram()
+
+```
+
+### Problem 4
+Use ggplot to produce a plot showing the position track of each storm from 2014 (use `long` for x and `lat` for y).
+Color your points by the name of the storm so you can distinguish the seven storm tracks.
+Which storm in 2014 made it the furthest North?
+  Gonzalo
+```{r}
+storms %>%filter(year==2014) %>% ggplot(aes(x=long, y=lat,color=name)) + geom_point()
+```
+
+### Problem 5
+The `ecars` data set from `fosdata` gives information about electric car charging sessions.
+
+Create a visualization showing seven scatterplots with the `chargeTimeHrs` variable on the x axis and the
+`kwhTotal` variable on the y axis.  Facet your visualization with one plot per day of week, in the correct day order.
+
+There is one outlier with a very high charge time that you should remove.
+
+```{r}
+ecars <- fosdata::ecars
+ecars %>% filter(chargeTimeHrs != max(chargeTimeHrs)) %>%
+  ggplot(aes(x=chargeTimeHrs,y=kwhTotal, color=weekday)) + geom_point() +
+  facet_wrap(~factor(weekday,levels=c("Sun","Mon","Tue","Wed","Thu","Fri","Sat")))
+```

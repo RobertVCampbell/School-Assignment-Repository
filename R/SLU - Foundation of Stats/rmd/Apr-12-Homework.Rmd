@@ -1,0 +1,190 @@
+---
+title: 'Homework #08'
+author: "Robert Campbell"
+date: "12 Apr 2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+library(dplyr)
+library(ggplot2)
+#library(babynames)
+library(tidyr)
+#library(stringr)
+library(ISwR)
+library(Sleuth3)
+
+# Homework Problems:
+# Ch 8 Exercises # 14, 16, 17, 19, 25-32, 34, 35, 21, 23, 24
+```
+
+
+## Chapter 08
+### Problem 14   
+
+98% Confidence interval: [-1.037, -0.556]
+P value is < 0.05, so the mean differs significantly from 0. This means that the two nurses' interpretations of the data differed significantly, effecting the values.
+```{r}
+react <- ISwR::react
+xbar <- mean(react)
+s <- sd(react)
+stderror <- s/sqrt(length(react))
+tcritical <- -qt(0.01,(length(react)-1))
+xbar - tcritical * stderror  # lower
+xbar + tcritical * stderror  # upper
+t.test(react,conf.level = 0.98)
+```
+
+### Problem 16   
+Hypothesis: Children's estimate of an object's weight will deviate from 0, meaning they will make inaccurate estimates.
+
+The only accurate estimates were for the 200g object, all others were significantly different.
+```{r}
+child_est<- fosdata::weight_estimate %>% filter(age!= 'adult')
+t.test(child_est$mean100, mu=100)
+t.test(child_est$mean200, mu=200)
+t.test(child_est$mean300, mu=300)
+t.test(child_est$mean400, mu=400)
+```
+
+### Problem 17    
+Population is Mexican-American adults in California, with a sample size of 102.
+P-value = (1.743 x 10^-4) < 0.05, so the blood pressure significantly differs from the normal systolic blood pressure of 120 mm Hg.
+```{r}
+obesity<-ISwR::bp.obese
+t.test(obesity$bp, mu=120)
+```
+
+### Problem 19
+Natural null hypothesis is that the population's ratio of actual weight to ideal weight will not deviate from the mean of 1.
+
+P-value is much less that 0.05, meaning that the population's mean ratio significantly differs from the null hypothesis.
+```{r}
+obesity<-ISwR::bp.obese
+t.test(obesity$obese, mu=1)
+```
+
+### Problem 25   
+  a. Pain felt by a laser shot on the hand will not significantly change based on the aesthetic quality of an observed painting.   
+  b. There is no difference in appearance of objects between normal viewing and viewing by bending over and looking between your legs.   
+  c. The time to urinate will differ based off of species.
+
+### Problem 26   
+  a. The mean of the sample is greater than the null hypothesis mean in all measurements.
+  b. The quality of sleep did not see significant improvement. This can be seen by the P-value being greater than 0.05 (P = 0.27).   
+  c. Reported sleep disturbance showed the most significance, having the smallest P-value of less than 0.01.
+
+### Problem 27   
+  P-value = 0.6463 > 0.05, there is no significant difference from between male and female blood pressure in the sample group.   
+  It would not be appropriate to generalize this to the general American population. It is a single ethnic group, in a single geographic region, in a "small town", and does not account for the diversity in each of those larger categories that make up the general American population.
+
+```{r}
+obesity<-ISwR::bp.obese
+t.test(bp ~ sex, data=obesity)
+```
+
+### Problem 28    
+  There is significant evidence, with the p-value = 0.01308. With Fish Oil's mean reduction in diastolic blood pressure having a positive value while regular oil has a negative value showing that fish oil provides greater reduction in diastolic blood pressure on average. 
+```{r}
+oil<-Sleuth3::ex0112
+t.test(BP ~ Diet, data=oil)
+```
+
+### Problem 29  
+  No, the initial boxplot looks lopsided and the initial histograms look more exponential than normal.   
+  After calculating the logs, the data does appear more normal.   
+  The difference in mean of the log of brainsize between large and small litter size is not significant as P-value= 0.05225 is not less than 0.05, though it is close.
+
+```{r}
+size <- Sleuth3::ex0333
+boxplot(BrainSize ~ LitterSize, data=size)
+size %>% ggplot(aes(x=BrainSize)) + geom_histogram() + facet_grid(vars(LitterSize))
+size<-mutate(size,logBrain=log(BrainSize))
+boxplot(logBrain ~ LitterSize, data=size)
+size %>% ggplot(aes(x=logBrain)) + geom_histogram() + facet_grid(vars(LitterSize))
+t.test(logBrain ~ LitterSize,data=size)
+```
+
+### Problem 30   
+  Hypothesis: There is a significant difference in volume in the affected brain regions of schizophrenic patients.
+  The sample data is inconclusive with P-Value = 0.05691 being greater than 0.05, but close.
+  
+```{r, warning=FALSE, message=FALSE}
+vol<-Sleuth3::case0202
+pvol<-vol %>% pivot_longer(col=Unaffected:Affected, names_to = "Diagnosis", values_to = "BrainVolume")
+pvol %>% ggplot(aes(x=BrainVolume)) + geom_histogram() + facet_grid(vars(Diagnosis))
+t.test(BrainVolume ~ Diagnosis, pvol)
+```
+
+### Problem 31   
+  a. The tk-12 provides a significantly different temperature change from the control with a P-value of (5.609 x 10^-15), and provides a cooling afffect as all data values are negative while the control are positive.
+```{r}
+moo<-fosdata::cows_small
+t.test(moo$tk_12, moo$control, paired = TRUE)
+```
+
+  b. The tk-0.75 provides a significantly different temperature change from the control with a P-value of (3.747 x 10^-14), and provides a cooling effect as all data values are negative while the control are positive.
+```{r}
+t.test(moo$tk_0_75, moo$control, paired = TRUE)
+```
+
+
+### Problem 32   
+  There is not a significant difference in task completion time based on gender as the P-value: 0.2033 much larger than the alpha: 0.01
+
+```{r}
+child<-fosdata::child_tasks
+t.test(day_night_completion_time_secs ~ gender, data=child)
+```
+
+### Problem 21   
+  a. The mean of 4 was within the confidence interval. (May not show that way after the knit)   
+```{r}
+x<-rnorm(10,mean=4, sd=1)
+t.test(x,conf.level = 0.95)
+```
+  b. 
+```{r}
+z<-replicate(10000, {x<-rnorm(10,mean=4, sd=1);
+  y<-t.test(x,conf.level = 0.95)$conf.int;
+  (4 > y[1]) && (4<y[2])})
+mean(z)
+```
+
+### Problem 23   
+  a. The mean of 4 did appear in the confidence interval. (This may not match the R output after knitting)
+```{r}
+x<-rexp(10,0.25)
+t.test(x,conf.level = 0.95)
+```
+  b. The result is not .95 because the data is heavily skewed left.
+```{r}
+z<-replicate(10000, {x<-rexp(10,0.25);
+  y<-t.test(x,conf.level = 0.95)$conf.int;
+  (4 > y[1]) && (4<y[2])})
+mean(z)
+```
+  c. This is closer to .95 because of the larger sample in each experiment iteration, which brings the sample mean closer to the true mean.
+```{r}
+z<-replicate(10000, {x<-rexp(100,0.25);
+  y<-t.test(x,conf.level = 0.95)$conf.int;
+  (4 > y[1]) && (4<y[2])})
+mean(z)
+```
+
+### Problem 24   
+```{r}
+pval<- replicate(10000,{x<-rnorm(20,0,1);
+  y<-convolve(x, c(1, 1), type = "filter");
+  t.test(y, mu=0)$p.value})
+mean(pval>0.05)
+```
+
+

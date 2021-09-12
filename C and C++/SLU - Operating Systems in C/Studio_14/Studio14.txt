@@ -1,0 +1,47 @@
+1) Robert Campbell
+2)
+3)
+[campbellrobert@hopper2 Studio_14]$ ./paraprimeLoop index: 5  Thread number: 4
+Loop index: 10  Thread number: 9
+Loop index: 3  Thread number: 2
+Loop index: 4  Thread number: 3
+Loop index: 2  Thread number: 1
+Loop index: 8  Thread number: 7
+Loop index: 6  Thread number: 5
+Loop index: 7  Thread number: 6
+Loop index: 1  Thread number: 0
+Loop index: 9  Thread number: 8
+Max threads: 20
+
+4) 
+Loop index: 1  Thread number: 0
+Loop index: 2  Thread number: 0
+Loop index: 3  Thread number: 1
+Loop index: 4  Thread number: 1
+Loop index: 5  Thread number: 2
+Loop index: 6  Thread number: 2
+Loop index: 7  Thread number: 3
+Loop index: 8  Thread number: 3
+Loop index: 9  Thread number: 4
+Loop index: 10  Thread number: 4
+Max threads: 5
+
+5)
+Each thread handles 5 loops, or the number of total iterations divided by maximum threads
+
+6)
+If some iterations run significantly longer than others, then that one thread will slow the entire process down.
+
+7)
+It will assign the first thread the first 5 loops, causing the entire process to take 5 seconds.
+It took about 5 seconds, with thread 0 finishing well after the other threads.
+
+8)
+It finished in about 1 seconds
+
+9)
+One thread processed most of the remaining loops by itself. First trial was thread 2, second was thread 4.
+
+10)
+Something like the number of iterations or processor time one thread can be assigned before assigning to the next thread.
+

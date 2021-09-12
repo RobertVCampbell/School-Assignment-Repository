@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Dec  3 14:28:52 2020
+# Process ID: 20328
+# Current directory: C:/Users/campbellrobert/Desktop/final/test2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17204 C:\Users\campbellrobert\Desktop\final\test2\test2.xpr
+# Log file: C:/Users/campbellrobert/Desktop/final/test2/vivado.log
+# Journal file: C:/Users/campbellrobert/Desktop/final/test2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/campbellrobert/Desktop/final/test2/test2.xpr
+launch_simulation -mode post-implementation -type timing
+source i2c_master.tcl
+update_compile_order -fileset sources_1
+add_force {/i2c_master/clk} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+run 10 ms
+close_sim
+close_design
+update_module_reference design_1_i2c_master_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+open_run impl_1
+close_design
+update_module_reference design_1_i2c_master_0_0
+startgroup
+create_bd_port -dir O -from 7 -to 0 debug
+connect_bd_net [get_bd_pins /i2c_master_0/debug] [get_bd_ports debug]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/campbellrobert/Desktop/final/test2/test2.sdk -hwspec C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/campbellrobert/Desktop/final/test2/test2.sdk -hwspec C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+file mkdir C:/Users/campbellrobert/Desktop/final/test2/test2.sdk
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/campbellrobert/Desktop/final/test2/test2.sdk -hwspec C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+update_module_reference design_1_i2c_master_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+file copy -force C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.sysdef C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper.hdf
+
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+update_module_reference design_1_i2c_master_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/campbellrobert/Desktop/final/test2/test2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]

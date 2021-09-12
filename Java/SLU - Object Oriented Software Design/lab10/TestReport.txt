@@ -1,0 +1,3 @@
+The constructor test fails each size test, since the stubbed out constructor does not actually calculate the puzzle size yet.
+The invalid move tests both failed, since the stubbed out move() methood only returns true, and does not have any logic.
+Testing if a puzzle was solved failed, because the stubbed method isSolved() only returns false.

@@ -1,0 +1,523 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Homework \#04},
+  pdfauthor={Robert Campbell},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Homework \#04}
+\author{Robert Campbell}
+\date{03 Mar 2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{chapter-03}{%
+\subsection{Chapter 03}\label{chapter-03}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trials }\OtherTok{\textless{}{-}} \DecValTok{100000}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{problem-18}{%
+\subsubsection{Problem 18}\label{problem-18}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rgeom}\NormalTok{(trials,.}\DecValTok{09}\NormalTok{)}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ x }\SpecialCharTok{+} \DecValTok{1}
+\FunctionTok{mean}\NormalTok{(y}\SpecialCharTok{==}\DecValTok{20}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.01447
+\end{verbatim}
+
+\hypertarget{problem-30}{%
+\subsubsection{Problem 30}\label{problem-30}}
+
+\(\frac{Var(eN)}{E[eN]} = \frac{e^2*Var(N)}{e*E[N]} = \frac{eN}{N} = e\)
+
+\hypertarget{problem-31}{%
+\subsubsection{Problem 31}\label{problem-31}}
+
+****Requires infinite of e\^{}x 1 + x + x\^{}2 / 2! + x\^{}3 / 3! +
+\ldots{}
+
+\hypertarget{chapter-04}{%
+\subsection{Chapter 04}\label{chapter-04}}
+
+\hypertarget{problem-01}{%
+\subsubsection{Problem 01}\label{problem-01}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(P(X \geq0.5)=\int_.5^1 2x\ dx = \frac{1^2 * 2}{2} - \frac{0.5^2 * 2}{2} = 1 - .25 = .75\)
+\item
+  \(P(X\geq 0.5 | X\geq0.25) = \frac{P(X\geq 0.5 \& X\geq0.25)}{P(X\geq0.25)}\)
+  \(\frac{\int_.5^1 2x\ dx}{\int_.25^1 2x\ dx} = \frac{0.75}{1 - 0.25^2} = \frac{.75}{0.9375} = 0.8\)
+\end{enumerate}
+
+\hypertarget{problem-02}{%
+\subsubsection{Problem 02}\label{problem-02}}
+
+\(1 = \int_0^1 Cx^2\ dx + \int_1^2C(2-x)^2\ dx = C*[\int_0^1x^2\ dx + \int_1^2(2-x)^2\ dx]\)
+\(1 = C*[\frac{1}{3} + \frac{1}{3}]\) \(C = \frac{3}{2}\)
+
+\hypertarget{problem-06}{%
+\subsubsection{Problem 06}\label{problem-06}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(1 = \int_0^13*(1-x)^2\ dx = 3 * -\int_1^0u^2\ du = 3 * [\frac{1}{3} - \frac{0}{3}] = 1\)
+\item
+  \(Mean = \int_0^1 3x(1-x)^2\ dx = 0.25\) \$Var = \int\_0\^{}1
+  3x\textsuperscript{2(1-x)}2~dx - Mean\^{}2 = 0.1 - 0.0625 = 0.0375 \$
+\item
+  \(P(x \leq 0.5) = \int_0^.5 3*(1-x)^2\ dx = 0.875\)
+\item
+  \(P(x\leq 0.5 | x \geq 0.25)= \frac{P(x\leq 0.5\ \&\ x \geq 0.25)}{P(x\geq0.25)} = \frac{\int_.25^.5 3*(1-x)^2\ dx}{\int_.25^1 3*(1-x)^2\ dx}\)
+  \(\frac{\frac{19}{64}}{\frac{27}{64}} = \frac{19}{27} = 0.703704\)
+\end{enumerate}
+
+\hypertarget{problem-07}{%
+\subsubsection{Problem 07}\label{problem-07}}
+
+\(Var(x) = 3\) \(Var(2x+1) = 2^2 * Var(X) + Var(1) = 4 * 3 + 0 = 12\)
+
+\hypertarget{problem-08}{%
+\subsubsection{Problem 08}\label{problem-08}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Estimate mean: 1
+\item
+  Estimate sd: 1
+\item
+  a = 0
+\item
+  Lower bound estimate \$P(0 \textless= x \textless=2): 0.225 * 2 = 0.45
+  \$ \#\#\# Problem 11
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\DecValTok{85}\NormalTok{, }\DecValTok{80}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1586553
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{mean}\NormalTok{(}\FunctionTok{replicate}\NormalTok{(trials, }\FunctionTok{sum}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{80}\NormalTok{,}\DecValTok{5}\NormalTok{)}\SpecialCharTok{\textgreater{}=}\DecValTok{85}\NormalTok{))}\SpecialCharTok{\textgreater{}}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.05974
+\end{verbatim}
+
+\hypertarget{problem-12}{%
+\subsubsection{Problem 12}\label{problem-12}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(trials, }\DecValTok{5036}\NormalTok{, }\DecValTok{122}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Mar-03-Homework_files/figure-latex/unnamed-chunk-5-1.pdf}
+b. 0, the probability of a specific number occuring in a continuous
+probability function is 0. The question could be modified to ask "what
+is the probability of the rope breaking at more than 5000lbs, but less
+than 5001lbs, which could be calculated as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{5001}\NormalTok{, }\DecValTok{5036}\NormalTok{,}\DecValTok{122}\NormalTok{) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\DecValTok{5000}\NormalTok{, }\DecValTok{5036}\NormalTok{, }\DecValTok{122}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.003134462
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(.}\DecValTok{95}\NormalTok{,}\DecValTok{5036}\NormalTok{,}\DecValTok{122}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5236.672
+\end{verbatim}
+
+\hypertarget{problem-15}{%
+\subsubsection{Problem 15}\label{problem-15}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,.}\DecValTok{1}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(x, }\FunctionTok{dunif}\NormalTok{(x,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Mar-03-Homework_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(x, }\FunctionTok{punif}\NormalTok{(x,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Mar-03-Homework_files/figure-latex/unnamed-chunk-8-2.pdf}
+
+\hypertarget{problem-17}{%
+\subsubsection{Problem 17}\label{problem-17}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rexp}\NormalTok{(trials,}\FloatTok{0.25}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.013208
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  By inspection, it would be a = 0 and does not contain the mean.
+\end{enumerate}
+
+\hypertarget{problem-19}{%
+\subsubsection{Problem 19}\label{problem-19}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c1}\OtherTok{\textless{}{-}} \FunctionTok{rexp}\NormalTok{(trials, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{)}
+\NormalTok{c2}\OtherTok{\textless{}{-}} \FunctionTok{rexp}\NormalTok{(trials)}
+\FunctionTok{mean}\NormalTok{(}\FunctionTok{pmax}\NormalTok{(c1,c2)}\SpecialCharTok{\textless{}}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.86505
+\end{verbatim}
+
+\hypertarget{problem-20}{%
+\subsubsection{Problem 20}\label{problem-20}}
+
+See attached handwritten work.
+
+\hypertarget{problem-21}{%
+\subsubsection{Problem 21}\label{problem-21}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  It is called the memoryless property because previous events do not
+  affect the probability of the next event.
+\item
+  \(P(X\geq a)\int_a^\infty \lambda e^{-\lambda x}\ dx = \frac{-\lambda e^{-\lambda x}}{\lambda}|_a^\infty\)
+  \(0 - (-e^{-a\lambda}) = e^{-a\lambda}\)
+\item
+\end{enumerate}
+
+\hypertarget{problem-22}{%
+\subsubsection{Problem 22}\label{problem-22}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Binomial P(Y==3):
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dbinom}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1550454
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dice}\OtherTok{\textless{}{-}}\FunctionTok{rbinom}\NormalTok{(trials,}\DecValTok{10}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(dice)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.65879
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(dice)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.39152
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Poisson, in accidents per week
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dpois}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2706706
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{traf}\OtherTok{\textless{}{-}}\FunctionTok{rpois}\NormalTok{(trials,}\DecValTok{2}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(traf)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.00001
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(traf)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.00677
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Uniform, \(Mean = \frac{60-0}{2} = 30\)
+\item
+  Exponential with rate in customers per hour
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cust }\OtherTok{\textless{}{-}} \FunctionTok{rexp}\NormalTok{(trials,}\DecValTok{5}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(cust)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1999709
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(cust}\SpecialCharTok{\textless{}}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{60}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.56627
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Geometric
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coin }\OtherTok{\textless{}{-}} \FunctionTok{rgeom}\NormalTok{(trials,.}\DecValTok{5}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(coin)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.99737
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(coin}\SpecialCharTok{\textless{}}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.938
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Normal, mean of 98.6F, var of \(100F - 98.6F = 1.4F\)
+\end{enumerate}
+
+\end{document}

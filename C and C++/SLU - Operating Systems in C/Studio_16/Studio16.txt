@@ -1,0 +1,32 @@
+1) Robert Campbell
+
+2) 262,144 frames
+
+3) 1,048,580 pages
+
+4) No, the system runs fine and just loads pages from storage into memory as needed
+
+5) 262,144, the number of frames available in memory
+
+6) 262,144 frames * 32b per virtual address = 8,388,610 bits = 1,048,580Bytes or ~ 1MB
+
+7) 32 Virtual address bits, 12 address bits included per page, only need the 20 most significant bits to
+    indicate page number. 
+
+8) Offset is the 12 least significant address bits
+
+9) Assuming the 1GB is using all address lines in the system, the physical address would be 30bits wide
+
+10) 30-12 = 18 Most significant bits of the address indicate the page frame.
+
+11) The 12 least significant bits indicate the offset.
+
+12) Read only: 0b0000
+13) Executable program code: 0b0010, 0b0101
+
+14) Virtual address: Page number bits + page offset bits, 4 + 10 = 14
+    Physical address: Page frame number bits + page offset bits, 5 + 10 = 15
+
+15) 0011 0001111000 Virtual -> 1 0111 0001111000 Physical
+
+16) 00110 1110000111 Physical -> 0101 1110000111 Virtual

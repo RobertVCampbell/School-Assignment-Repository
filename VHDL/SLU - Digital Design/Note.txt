@@ -1,0 +1,4 @@
+This was the first course where I ever used .vhdl and the lab submissions were all done as .pdfs
+So unfortunately I only preserved the .pdf format of the designs.
+
+The class started with symbolic design and transitioned to VHDL as the designs got more complex.

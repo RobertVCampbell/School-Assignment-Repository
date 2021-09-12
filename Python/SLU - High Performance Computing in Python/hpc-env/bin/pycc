@@ -1,0 +1,3 @@
+#!/student/campbellrobert/csci_4850_5850/2021S/hpc-env/bin/python
+from numba.pycc import main
+main()

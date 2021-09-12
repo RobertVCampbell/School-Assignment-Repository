@@ -1,0 +1,58 @@
+1) Robert Campbell
+2) 'pass'
+3) 'ferry'
+4)  1min 30.482 seconds realtime
+5)
+    2 threads: 46.285 seconds realtime
+    4 threads: 25.656 seconds realtime
+    8 threads: 13.510 seconds realtime
+    13 threads: 7.430 seconds realtime
+    26 threads: 5.723 seconds realtime
+
+6) 26^5 = 11881376 hashes tried
+    1 thread:    131312.04 hps
+    2 threads:   256700.36 hps
+    4 threads:   463103.21 hps
+    8 threads:   879450.48 hps
+    13 threads: 1599108.48 hps
+    26 threads: 2076074.79 hps
+
+7) The hashes per second is roughly multiplied by the number of threads compared to the single thread.
+   Threading allows for multiple hashes to be tested at the same time, reducing amount of realtime needed
+     to test all possibilities.
+
+8) Maximum hash rate was 2076074.79 hashes per second by using 26 threads.
+
+9) (26^1) + (26^2) + ... + (26^8) = 217,180,147,158
+    Length 1:           26
+    Length 2:          676
+    Length 3:        17576
+    Length 4:       456976
+    Length 5:     11881376
+    Length 6:    308915776
+    Length 7:   8031810176
+    Length 8: 208827064576
+
+10)
+    Length 1:        .0000125s
+    Length 2:        .000326s
+    Length 3:        .0085s
+    Length 4:        .22s
+    Length 5:       5.72s
+    Length 6:     148.80s
+    Length 7:   3,868.75s
+    Length 8: 100,587.45s
+
+    Increasing keylength massively increases time to crack.
+
+11) 
+    52 char: 19,770,609,664 /  2,076,074.79 = 9,523.07 seconds
+    62 char: 27,359.44 seconds
+    93 char: 311,641.08 seconds
+
+12) When running multiple threads, the program does not exit immediately when a match is found.
+
+13)
+    EC1) 'salts', 'salts', 'salts', 'salts', 'salts', 'donot', 'skipp', 'anyyy', 'salts'
+    EC2) It provides additional security for users that may have the same passwords, while
+        also generally adding more hash possiblities.

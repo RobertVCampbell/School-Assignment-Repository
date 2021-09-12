@@ -1,0 +1,60 @@
+rank:0> torus_rank=0, coords=(0,0)
+MPI rank=0 I have a DOWN neighbour rank=4
+MPI rank=0 I have a UP neighbour rank=8
+MPI rank=0 I have a LEFT neighbour rank=3
+MPI rank=0 I have a RIGHT neighbour rank=1
+rank:1> torus_rank=1, coords=(0,1)
+MPI rank=1 I have a DOWN neighbour rank=5
+MPI rank=1 I have a UP neighbour rank=9
+MPI rank=1 I have a LEFT neighbour rank=0
+MPI rank=1 I have a RIGHT neighbour rank=2
+rank:2> torus_rank=2, coords=(0,2)
+MPI rank=2 I have a DOWN neighbour rank=6
+MPI rank=2 I have a UP neighbour rank=10
+MPI rank=2 I have a LEFT neighbour rank=1
+MPI rank=2 I have a RIGHT neighbour rank=3
+rank:3> torus_rank=3, coords=(0,3)
+MPI rank=3 I have a DOWN neighbour rank=7
+MPI rank=3 I have a UP neighbour rank=11
+MPI rank=3 I have a LEFT neighbour rank=2
+MPI rank=3 I have a RIGHT neighbour rank=0
+rank:4> torus_rank=4, coords=(1,0)
+MPI rank=4 I have a DOWN neighbour rank=8
+MPI rank=4 I have a UP neighbour rank=0
+MPI rank=4 I have a LEFT neighbour rank=7
+MPI rank=4 I have a RIGHT neighbour rank=5
+rank:5> torus_rank=5, coords=(1,1)
+MPI rank=5 I have a DOWN neighbour rank=9
+MPI rank=5 I have a UP neighbour rank=1
+MPI rank=5 I have a LEFT neighbour rank=4
+MPI rank=5 I have a RIGHT neighbour rank=6
+rank:6> torus_rank=6, coords=(1,2)
+MPI rank=6 I have a DOWN neighbour rank=10
+MPI rank=6 I have a UP neighbour rank=2
+MPI rank=6 I have a LEFT neighbour rank=5
+MPI rank=6 I have a RIGHT neighbour rank=7
+rank:7> torus_rank=7, coords=(1,3)
+MPI rank=7 I have a DOWN neighbour rank=11
+MPI rank=7 I have a UP neighbour rank=3
+MPI rank=7 I have a LEFT neighbour rank=6
+MPI rank=7 I have a RIGHT neighbour rank=4
+rank:8> torus_rank=8, coords=(2,0)
+MPI rank=8 I have a DOWN neighbour rank=0
+MPI rank=8 I have a UP neighbour rank=4
+MPI rank=8 I have a LEFT neighbour rank=11
+MPI rank=8 I have a RIGHT neighbour rank=9
+rank:9> torus_rank=9, coords=(2,1)
+MPI rank=9 I have a DOWN neighbour rank=1
+MPI rank=9 I have a UP neighbour rank=5
+MPI rank=9 I have a LEFT neighbour rank=8
+MPI rank=9 I have a RIGHT neighbour rank=10
+rank:10> torus_rank=10, coords=(2,2)
+MPI rank=10 I have a DOWN neighbour rank=2
+MPI rank=10 I have a UP neighbour rank=6
+MPI rank=10 I have a LEFT neighbour rank=9
+MPI rank=10 I have a RIGHT neighbour rank=11
+rank:11> torus_rank=11, coords=(2,3)
+MPI rank=11 I have a DOWN neighbour rank=3
+MPI rank=11 I have a UP neighbour rank=7
+MPI rank=11 I have a LEFT neighbour rank=10
+MPI rank=11 I have a RIGHT neighbour rank=8

@@ -1,0 +1,64 @@
+1) Robert Campbell, Aaron Sala, Joe Sloyan
+
+2)
+Sleeper's PID is: 723988
+Slept for 0 iterations!
+Slept for 1 iterations!
+Slept for 2 iterations!
+Slept for 3 iterations!
+Slept for 4 iterations!
+Slept for 5 iterations!
+Slept for 6 iterations!
+Slept for 7 iterations!
+^C
+[campbellrobert@hopper2 campbellrobert]$ 
+
+3)
+SIGINT       P1990      Term    Interrupt from keyboard
+SIGINT           2           2       2       2
+
+4)
+After using kill -s 2 724239, the sleep program stopped
+
+5)
+SIGQUIT          3           3       3       3
+[campbellrobert@hopper2 ~]$ kill -s 3 724405
+
+Slept for 12 iterations!
+Slept for 13 iterations!
+Slept for 14 iterations!
+Quit (core dumped)
+[campbellrobert@hopper2 Studio_8]$
+
+It quit the process, but also did a core dump
+
+6)
+Both terminate, the success message did not print
+
+7)
+#include <signal.h>
+
+void sig_handle(int signum){
+	printf("This process is ignoring SIGINT");
+	return;
+
+}
+
+int main( int argc, char* argv[] ){
+	signal(2,sig_handle);
+
+8)
+[campbellrobert@hopper2 Studio_8]$ ./call_sleeper 
+Forking sleeper...
+Waiting for sleeper 726410...
+Sleeper's PID is: 726410
+Slept for 0 iterations!
+Slept for 1 iterations!
+Slept for 2 iterations!
+^CThis process is ignoring SIGINT
+Parent finished waiting and returned successfully!
+[campbellrobert@hopper2 Studio_8]$ 
+
+9)
+As a system interrupt to launch another process, such as
+    launching task manager in a Windows system.

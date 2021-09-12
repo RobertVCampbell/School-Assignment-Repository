@@ -1,0 +1,150 @@
+---
+title: "Exam 1"
+author: "Robert Campbell"
+date: "Friday, March 5, 2021"
+output: pdf_document
+---
+
+Place your answers into this markdown document, knit it, and hand in the result as a PDF.
+There are 9 questions, each worth 10 points.  Additionally, you get 10 points for handing in a PDF of a knit markdown document.
+
+You may use R, the internet, and any reference material,
+but do not work together and do not get help (except from Dr. Clair).
+
+### Honor Pledge
+The work I have submitted represents my own effort. While working on this exam, I did not communicate in any form with individuals other than the instructor.
+
+Signed: Robert V. Campbell
+
+### Problem 1
+Suppose you roll an ordinary six sided die 20 times and add up the total.
+What is the probability the sum is 55 or less?
+```{r}
+x<-replicate(10000,sum(sample(1:6,20,replace=TRUE)))
+mean(x<56)
+```
+
+
+### Problem 2
+McDonald's happy meals currently contain a package of four Pokemon cards. There are 25 different cards, all equally likely.
+
+a. If you buy one happy meal (4 cards), what is the probability you get a Pikachu card?
+```{r}
+x<-replicate(10000,sum(sample(1:25, 4, replace=TRUE) == 1))
+mean(x>0)
+```
+
+b. If you buy 10 happy meals, what is the probability you get a Pikachu card?
+```{r}
+x<-replicate(10000,sum(sample(1:25, 40, replace=TRUE) == 1))
+mean(x>0)
+```
+c. How many happy meals do you need to buy to have a 99% chance of getting a Pikachu?
+```{r}
+x<-replicate(10000,sum(sample(1:25, 116, replace=TRUE) == 1))
+mean(x>0)
+116/4
+```
+
+
+### Problem 3
+Roll two dice and consider the events
+
+- $A$: both dice are even
+- $B$: the sum of the dice is 8
+
+a. What is $P(A)$?
+  $P(A) = \frac{9}{36} = \frac{1}{4}$
+b. What is $P(A|B)$?
+   $P(A|B) = \frac{P(A\&B)}{P(B)} = \frac{3/36}{5/36}=\frac{3}{5}$
+c. Are $A$ and $B$ independent events?
+  No.
+
+### Problem 4
+
+The random variable $X$ has the pdf shown here:
+
+```{r echo=FALSE}
+px <- seq(-1,3,.1)
+plot(px,pmax(1-abs(px-1),0),type='l',xlab="X",ylab="")
+```
+
+a. What is $P(X < 1)$?
+  $P(X < 1) = \frac{1}{2}$
+b. What is $P(X > 1.5)$?
+  $P(X > 1.5) = \frac{1}{8}$
+c. What is $E[X]$?
+  $E[X] = 1$
+
+### Problem 5
+
+A high voltage spark can be used to create tiny aerosol particles of gold.
+These particles have diameters which vary according to a normal distribution with mean 1.35nm and standard deviation 0.24nm.
+
+a. What proportion of these particles have diameter less than 1nm?
+```{r}
+x<-rnorm(10000,1.35,0.24)
+mean(x<1)
+```
+
+b. What proportion of these particles have diameter larger than 2nm?
+```{r}
+mean(x>2)
+```
+
+### Problem 6
+Back in 2006, the website MySpace leaked a large number of its user's passwords.
+The passwords had this distribution:
+
+- Numbers only: 1.3%
+- Letters only: 9.5%
+- Alphanumeric (both letters and numbers): 81%
+- Includes symbols: 8.2%
+
+a. What is the probability that a MySpace user had no Symbols in their password?
+  $1-.082=  0.918$
+
+b. If you chose 10 MySpace users at random, what is the probability that all of them had Alphanumeric passwords?
+
+```{r}
+x<- replicate(10000,sum(sample(c('N','L','AN','S'), 10, replace=TRUE,prob=c(.013,.095,.81,.082)) == 'AN'))
+mean(x==10)
+```
+### Problem 7
+
+Let $X$ and $Y$ be normal random variables with mean 10 and sd 5.
+
+Find the expected distance from the point $(X,Y)$ to the origin $(0,0)$.
+```{r}
+sqrt((10^2)+(10^2))
+
+```
+
+### Problem 8
+
+The `ChestSizes` data from the `HistData` library has measurements of Scottish Militiamen.
+There are two variables: `chest`, which gives the chest size in inches, and `count` which gives the number of soldiers with that chest size.
+
+a. Calculate the total number of soldiers by summing the `count` variable.
+```{r}
+sum(HistData::ChestSizes$count)
+
+```
+
+b. Calculate the mean chest size by summing (chest size)*(count)/(total number of soldiers).
+```{r}
+sum((HistData::ChestSizes$count)*(HistData::ChestSizes$chest))/sum(HistData::ChestSizes$count)
+```
+
+### Problem 9
+Continue with `HistData::ChestSizes`.
+
+a. Plot the distribution of chest sizes with `chest` on the $x$-axis and `count` on the $y$-axis.
+```{r}
+plot(HistData::ChestSizes$chest,HistData::ChestSizes$count)
+```
+b. What sort of random variable could model this distribution?
+  Normal RV
+
+c. From your plot, estimate (by eye) the mean and standard deviation of chest sizes.
+  Mean: 40, sd: 2

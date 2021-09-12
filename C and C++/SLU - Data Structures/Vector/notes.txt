@@ -1,0 +1,44 @@
+Questions:
+	for sort, do I have to pass the array or can it just access _data
+	does c++ truncate or round division remainders
+
+
+Find maximum of an array
+	has to linear search, because vector isn't guaranteed to be sorted
+
+again, sorted
+
+Sort:
+	let's do quick sort
+		split between sort(), sort(things), swap(indexes)
+	
+
+reverse:
+	sort
+	linearly replace
+	
+
+
+vector of type Object
+	contains:
+		int _capacity
+		int _size
+		Object* _data  (array)
+
+existing functions:
+	insert(int, object)
+	int size()
+	bool empty()
+	erase(int index)
+	pushback(Object)
+	pop_back()
+	push_front(object)
+	pop_front()
+	int capacity()		
+	Object maximum()
+
+operators:
+	[]
+	==
+	=
+	

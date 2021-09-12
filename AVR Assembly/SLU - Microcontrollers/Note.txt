@@ -1,0 +1,1 @@
+I lost some of the early labs' .asm files, but the pre-labs are a rough draft of the AVR program that was used to complete the lab in class.

@@ -1,0 +1,54 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Dec  3 13:38:36 2020
+# Process ID: 15028
+# Current directory: C:/Users/campbellrobert/Desktop/final/test2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10428 C:\Users\campbellrobert\Desktop\final\test2\test2.xpr
+# Log file: C:/Users/campbellrobert/Desktop/final/test2/vivado.log
+# Journal file: C:/Users/campbellrobert/Desktop/final/test2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/campbellrobert/Desktop/final/test2/test2.xpr
+INFO: [Project 1-313] Project file moved from 'C:/work/test2' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Users/campbellrobert/Desktop/final/ip_repo/myAXIip_1.0', nor could it be found using path 'C:/work/ip_repo/myAXIip_1.0'.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Users/campbellrobert/Desktop/final/Block Design', nor could it be found using path 'C:/work/Block Design'.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Users/campbellrobert/Desktop/final/test/test.ip_user_files/bd/test_1/ip/test_1_test_0_0/sim', nor could it be found using path 'C:/work/test/test.ip_user_files/bd/test_1/ip/test_1_test_0_0/sim'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/campbellrobert/Desktop/final/ip_repo/myAXIip_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/campbellrobert/Desktop/final/Block Design'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/campbellrobert/Desktop/final/test/test.ip_user_files/bd/test_1/ip/test_1_test_0_0/sim'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_1_myAXIip_0_1
+
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 942.969 ; gain = 250.063
+open_bd_design {C:/Users/campbellrobert/Desktop/final/test2/test2.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- xilinx.com:ip:microblaze:11.0 - microblaze_0
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - microblaze_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_1
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_clk_wiz_1_100M
+Adding component instance block -- xilinx.com:module_ref:sevenseg:1.0 - sevenseg_0
+Adding component instance block -- xilinx.com:user:myAXIip:1.0 - myAXIip_0
+Adding component instance block -- xilinx.com:module_ref:i2c_master:1.0 - i2c_master_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /myAXIip_0/Myreset_n(undef) and /sevenseg_0/reset_n(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /myAXIip_0/Myreset_n(undef) and /i2c_master_0/reset_n(rst)
+Successfully read diagram <design_1> from BD file <C:/Users/campbellrobert/Desktop/final/test2/test2.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1516.926 ; gain = 48.918
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  3 13:39:27 2020...

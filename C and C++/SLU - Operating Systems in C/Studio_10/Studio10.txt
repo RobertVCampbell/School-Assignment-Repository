@@ -1,0 +1,113 @@
+1) Robert Campbell
+
+2)
+#define ITER 2000000
+int race = 0;
+
+void adder(){
+    for(int i = 0; i < ITER; i++){
+        race++;
+    }
+    return;
+}
+
+void subtractor(){
+    for(int i = 0; i < ITER; i++ ){
+        race--;
+    }
+    return;
+}
+
+3)
+If the were executed in main they would be executed sequentially, adding 2M times and then subtracting 2M times, resulting in 0.
+
+Starting race variable: 0
+After adder race variable: 2000000
+After subtractor race variable: 0
+
+4)
+They may both try to make changes to the same value at the same time, causing one of the two functions to effective increment/decrement by 2 (or more) instead of 1.
+I have no idea a specific value, but probably something non-zero
+
+5)
+Starting race variable: 0
+After subtractor race variable: 845168
+After adder race variable: 1439526
+Final race variable: 1439526
+[campbellrobert@hopper2 Studio_10]$ ./race_cond
+Starting race variable: 0
+After adder race variable: 482996
+After subtractor race variable: -471527
+Final race variable: -471527
+[campbellrobert@hopper2 Studio_10]$ ./race_cond
+Starting race variable: 0
+After adder race variable: 141182
+After subtractor race variable: -580638
+Final race variable: -580638
+[campbellrobert@hopper2 Studio_10]$ ./race_cond
+Starting race variable: 0
+After subtractor race variable: 1279309
+After adder race variable: 1535830
+Final race variable: 1535830
+[campbellrobert@hopper2 Studio_10]$ ./race_cond
+Starting race variable: 0
+After adder race variable: -387255
+After subtractor race variable: -885163
+Final race variable: -885163
+
+6)
+Basically, one operation is completing at least one iteration between the fetch
+and arithmetic of the other operation. This effectively negates all of the other
+programs operations that occur during this time.
+
+The max/min value would probably be the iteration variable, so 2M.
+
+7)
+1M:
+Starting race variable: 0
+After adder race variable: -52454
+After subtractor race variable: -714921
+Final race variable: -714921
+500K:
+Starting race variable: 0
+After adder race variable: -174690
+After subtractor race variable: -220540
+Final race variable: -220540
+
+Yes, it still exibits the behavior.
+
+1k:
+Starting race variable: 0
+After adder race variable: 1000
+After subtractor race variable: 0
+Final race variable: 0
+
+Now it doesn't, possibly because smaller size of 1000 iterations is more likely
+to be finished before the second thread gets started.
+
+8)
+No it probably would not as the number of threads is usually tied to the number of
+physical and virtual processor cores.
+
+9)
+The subtractor call completes first and then the adder, the reverse of the order
+that they were called in the program.
+
+Running it a few more times, the intermediate value changes from -2M, and sometimes the
+adder thread completes first.
+
+10)
+[campbellrobert@hopper2 Studio_10]$ taskset -c 0 ./race_cond
+Starting race variable: 0
+After adder race variable: -2768695
+After subtractor race variable: -3082246
+Final race variable: -3082246
+
+11)
+My first thought was overflow, but 200M is still off of that by a factor of 10.
+If the operating system is queueing the operations as separate threads with different priority, maybe
+one is interrupting the other and changing the memory space that the lower priority process was working on?
+I'm not sure how to determine which program would be given the higher priority, though.
+
+
+

@@ -1,0 +1,32 @@
+1) Robert Campbell
+2)
+9 bits
+
+3) Assuming sent LSB first
+0 00001111
+1 11101100
+0 11111111
+0 00000000
+
+4)
+It will catch all 1-bit errors
+
+5)
+It will miss all 2-bit errors
+All combiniations of 2 flipped bits will result in maintainging parity.
+
+6)
+It catches an error when an odd number of bits are flipped.
+It fails when an even number of bits are flipped.
+
+7)
+38 bytes
+
+8)
+138 bytes
+27.54% overhead
+
+9)
+1538 bytes
+2.471% overhead
+

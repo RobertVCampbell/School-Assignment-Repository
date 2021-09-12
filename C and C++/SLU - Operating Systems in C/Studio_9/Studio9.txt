@@ -1,0 +1,44 @@
+1) Robert Campbell, Aaron Sala, Joe Sloyan
+2)
+void* (*start_routine) (void *)
+
+3)
+4)
+[campbellrobert@hopper2 Studio_9]$ ./threads
+This is a threaded message
+[campbellrobert@hopper2 Studio_9]$ 
+
+5)
+struct mystruct{
+    int arg1;
+    char arg2[100];
+    int ret;
+};
+
+6)
+[campbellrobert@hopper2 Studio_9]$ ./threads
+This is a threaded message
+thread arg1: 10
+thread arg2: Struct text here.
+thread ret: 1
+[campbellrobert@hopper2 Studio_9]$
+
+7)
+8)
+thread arg2: This is thread 0
+
+thread arg2: This is thread 2
+
+thread arg2: This is thread 1
+
+thread arg2: This is thread 3
+
+thread arg2: This is thread 4
+
+[campbellrobert@hopper2 Studio_9]$ 
+
+9)
+The outputs are all in clusters of 5, but the order within those clusters is inconsistent.
+The clustering is because the 5 threads were joined after all five were created and no new threads were made until the old ones finished.
+The order within the cluster is inconsistent because each thread is processed at a different rate, basically all in separate queues, and 
+finished as the OS gets to them.

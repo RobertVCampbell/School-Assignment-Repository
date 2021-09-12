@@ -1,0 +1,58 @@
+---
+title: "Markdown demo"
+author: "Dr. Clair"
+date: "`r format(Sys.Date(), "%B %d, %Y")`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, echo=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+suppressWarnings(suppressMessages(library(dplyr)))
+```
+
+This is an R Markdown document.  You can turn it into HTML with the Knit menu in RStudio.
+If you are willing to install LaTeX, you can produce a PDF document directly.
+
+## First Section
+
+Want some text? Just type it.
+
+Want a list?
+
+* One thing
+* Another thing
+* The end
+
+This is **important**, this is not.
+
+LaTeX math formatting is built in, use `$` to start and end math.
+
+Is your favorite function $x^2$?  Mine is $\sqrt{x^2 + 4}$.
+
+Using `\[` and `\]` puts math on its own line:
+\[ \sum_1^\infty \frac{1}{1+x^2} \]
+
+## Second Section
+
+You can include R code which will display, run, and display its output.
+Type CTRL-Option-I to insert an R code block.
+
+Here's some R code using the built-in `iris` data set.
+
+```{r}
+str(iris)
+max(iris$Sepal.Length)
+```
+
+Here's a plot:
+
+```{r}
+iris %>% filter(Species == 'setosa') %>%
+  select(Sepal.Length,Sepal.Width) %>% plot()
+```

@@ -1,0 +1,20 @@
+1) Robert Campbell
+
+2) 1110000111 is a TLB miss
+
+3) 00010011001110 is a TLB hit
+
+4) page 0101 would be evicted from the TLB
+
+5) Pages in the TLB: 0001, 0101, 0011
+
+6) Total hit cycles: 90,000
+    Total miss cycles: 300,000
+    Total over all cycles: 390,000 cycles
+7) Average: 3.9 cycles
+
+8) Total 290,000 cycles. Average 2.9 cycles
+
+9) Total 129000, Average 1.29 cycles
+
+10) Design 2, 2.9/1.29 times better.

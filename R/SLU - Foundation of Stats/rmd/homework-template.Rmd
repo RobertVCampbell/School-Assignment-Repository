@@ -1,0 +1,23 @@
+---
+title: "Homework #xx"
+author: "Student"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+suppressWarnings(suppressMessages(library(dplyr)))
+```
+
+## Chapter xx
+
+### Problem 1
+My first homework problem
+
+### Problem 2
+My second homework problem

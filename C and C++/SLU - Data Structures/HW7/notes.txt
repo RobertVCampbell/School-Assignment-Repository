@@ -1,0 +1,101 @@
+Assignment:
+    Create BST remove()
+	    find the node, if it exists
+		    a) If leaf, delete
+		    b) If one child, delete and promote
+		    c) If two children, find the next in order node (y)
+			- If y is leaf, swap y to found node and delete y
+			    - If y has a child it must only have a right child
+				+ Put y's value in found node
+				    + Delete and promote y's original node
+
+BinaryTree
+	Node
+		ItemType _data
+		Node* _parent, _left, _right
+		int _aux;
+	
+	Iterator
+		variables:
+			Node* _current
+			BinaryTree* _tree //tree iterator belongs to
+		
+		functions:
+			copy constructor
+			ItemType& operator*
+				- returns the data at the node the iterator points to
+			ItemType* operator->
+				- returns const pointer to _data
+			Iterator left()/right()
+				- returns an iterator to the the current iterator node's left/right child
+			Iterator up()
+				- returns an iterator to the current iterator node's parent
+			Iterator operator++()
+			Iterator operator++(int dummy)
+			bool isRoot()
+			bool operator==
+			bool operator!=
+			bool hasLeftChild()/hasRightChild()
+			bool isLeaf()
+			bool isNULL()
+			
+
+	BinaryTree variables
+		unsigned int _size
+		Node* _root       //pointer to the root node in binary tree
+
+	private functions
+		_recursivelyDelete(Iterator)
+			- input: Iterator pointing to the subtree root
+			- recursively call for both left and right subtrees, if they exist
+			- finally delete this node and decrement size
+
+		Node* _duplicate(Iterator)
+			- input: Iterator pointing to the root of the subtree to copy
+			- 
+
+	public functions:
+		accessors:
+			int size()
+			int getAux(Iterator iter)
+			Iterator root()  //returns an iterator pointing to the root of this tree
+			Iterator begin() //returns an iterator pointing to the leftmost child
+			Iterator end()   //returns a null iterator
+			bool empty()
+
+		mutators:
+			void setAux(int value, Iterator iter)
+
+			void createRoot(const ItemType&value)
+				- if the tree is empty create the root
+				- throw error if there is already a root
+
+			void insertAsRightChild(ItemType& value, Iterator)
+				- input: the value to add as a right child node, iterator for the parent node
+				- recursively delete the right subtree if it already exists
+				- create new right child 
+			void insertAsLeftChild(ItemType&, Iterator)
+				- same as the above function		
+
+			void deleteAndMoveLeftChildUp(Iterator)
+				- input: Iterator for the node to delete
+				- Delete the node and promote the left child if it exists
+				- delete any nodes in the right subtree
+			void deleteAndMoveRightChildUp(Iterator)
+				- Same as above, but for switch left and right
+			
+			void pivot(Iterator)  //currently blank. Update for AVL
+
+
+Binary Search Tree
+	BinaryTree<ItemType>:Iterator insert(ItemType&)
+		If empty, insert as root
+		If not empty, traverse tree and insert in the appropriate location
+	bool find(ItemType&)
+		if position's value == search value, return true
+		traverse the tree by BST ordering
+		If end of tree w/o returning true, return false
+	void remove
+		Homework
+	
+

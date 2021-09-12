@@ -1,0 +1,394 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Wed Dec  2 15:33:28 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 14) to (Rev. 15)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_myAXIip_0_1'. These changes may impact your design.
+
+
+-Upgrade has added port 'Mydata_done'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Wed Dec  2 11:10:29 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 13) to (Rev. 14)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_myAXIip_0_1'. These changes may impact your design.
+
+
+-Upgrade has removed port 'MyDiv'
+
+-Upgrade has added port 'Myack_error'
+
+-Upgrade has added port 'Mybusy'
+
+-Upgrade has added port 'Mydata_rd'
+
+-Upgrade has added port 'Mydata_ready'
+
+-Upgrade has added port 'Myen_sw'
+
+-Upgrade has added port 'Myena'
+
+-Upgrade has added port 'MyinputNum'
+
+-Upgrade has added port 'Myreset_n'
+
+-Upgrade has added port 'Myrst_sw'
+
+-Upgrade has added port 'Mysamp'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun Nov 29 17:12:35 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_wordtest_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of design_1_wordtest_0_0 (xilinx.com:module_ref:wordtest:1.0 (Rev. 1)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_wordtest_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'address'
+
+-Upgrade has removed port 'led'
+
+-Upgrade has removed port 'rd_n'
+
+-Upgrade has removed port 'switch'
+
+-Upgrade has added port 'count'
+
+-Upgrade has added port 'div'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun Nov 29 17:12:35 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 12) to (Rev. 13)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_myAXIip_0_1'. These changes may impact your design.
+
+
+-Upgrade has removed port 'MyAddr'
+
+-Upgrade has removed port 'MyData'
+
+-Upgrade has removed port 'MyData_O'
+
+-Upgrade has removed port 'MyRd_N'
+
+-Upgrade has added port 'MyDiv'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Nov 14 15:36:38 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 11) to (Rev. 12)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Nov 14 14:43:19 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 10) to (Rev. 11)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_myAXIip_0_1'. These changes may impact your design.
+
+
+-Upgraded port 'MyAddr' width 4 differs from original width 5
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Nov 14 14:36:21 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 9) to (Rev. 10)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_myAXIip_0_1'. These changes may impact your design.
+
+
+-Upgrade has added port 'MyData_O'
+
+-Upgrade has added port 'MyRd_N'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Nov 14 14:07:34 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 7) to (Rev. 9)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_myAXIip_0_1'. These changes may impact your design.
+
+
+-Upgraded port 'MyAddr' width 5 differs from original width 4
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Nov 14 14:04:29 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_wordtest_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of design_1_wordtest_0_0 (xilinx.com:module_ref:wordtest:1.0 (Rev. 1)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_wordtest_0_0'. These changes may impact your design.
+
+
+-Upgraded port 'address' width 4 differs from original width 1
+
+-Upgrade has removed port 'data'
+
+-Upgrade has added port 'rd_n'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Nov 14 14:04:29 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0 (Rev. 7)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Nov 14 13:41:16 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 6) to (Rev. 7)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_myAXIip_0_1'. These changes may impact your design.
+
+
+-Upgrade has removed port 'MyLed'
+
+-Upgrade has added port 'MyAddr'
+
+-Upgrade has added port 'MyData'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun Oct 11 22:14:41 2020
+| Host         : Garin-Book running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_myAXIip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_myAXIip_0_1 (xilinx.com:user:myAXIip:1.0) from (Rev. 5) to (Rev. 6)
+

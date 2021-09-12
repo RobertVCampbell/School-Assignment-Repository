@@ -1,0 +1,10 @@
+Name: Robert Campbell
+Total: 9.5/10
+
+Readme (including run time discussion):
+
+Good analysis, but did want a big-O for the copying ones (should be O(1) now).
+
+Code for implementation:
+
+Passed all tests. Please watch indenting - was hard to read the code!

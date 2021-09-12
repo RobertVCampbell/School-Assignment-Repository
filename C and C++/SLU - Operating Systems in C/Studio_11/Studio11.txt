@@ -1,0 +1,146 @@
+1) Robert Campbell
+
+2)
+pthread_mutext_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+3)
+
+4)
+If the accesses are synchronized, the final value should be 0.
+This will cause an increase in runtime as the threads will have
+wait for each other anytime they both need access.
+
+5)
+Yes, the final value is 0.
+
+Starting race variable: 0
+After adder race variable: 82999
+After subtractor race variable: 0
+Final race variable: 0
+[campbellrobert@hopper2 Studio_11]$ ./race_cond
+Starting race variable: 0
+After subtractor race variable: -773468
+After adder race variable: 0
+Final race variable: 0
+[campbellrobert@hopper2 Studio_11]$ ./race_cond
+Starting race variable: 0
+After adder race variable: 422114
+After subtractor race variable: 0
+Final race variable: 0
+[campbellrobert@hopper2 Studio_11]$ ./race_cond
+Starting race variable: 0
+After subtractor race variable: -385454
+After adder race variable: 0
+Final race variable: 0
+
+6)
+[campbellrobert@hopper2 Studio_10]$ time ./race_cond 
+Starting race variable: 0
+After adder race variable: -5895301
+After subtractor race variable: -7905542
+Final race variable: -7905542
+
+real    0m0.212s
+user    0m0.402s
+sys     0m0.004s
+[campbellrobert@hopper2 Studio_10]$ time ./race_cond 
+Starting race variable: 0
+After subtractor race variable: 7564470
+After adder race variable: 8958184
+Final race variable: 8958184
+
+real    0m0.183s
+user    0m0.339s
+sys     0m0.003s
+[campbellrobert@hopper2 Studio_10]$ time ./race_cond 
+Starting race variable: 0
+After adder race variable: 3168681
+After subtractor race variable: -5078927
+Final race variable: -5078927
+
+real    0m0.212s
+user    0m0.367s
+sys     0m0.003s
+
+Average: 0.20233... seconds real time.
+
+
+7) Lock/unlock each increment/decrement
+[campbellrobert@hopper2 Studio_11]$ time ./race_cond 
+Starting race variable: 0
+After subtractor race variable: -3415932
+After adder race variable: 0
+Final race variable: 0
+
+real    0m3.357s
+user    0m4.190s
+sys     0m2.169s
+[campbellrobert@hopper2 Studio_11]$ time ./race_cond 
+Starting race variable: 0
+After subtractor race variable: -9641007
+After adder race variable: 0
+Final race variable: 0
+
+real    0m2.696s
+user    0m3.250s
+sys     0m1.612s
+[campbellrobert@hopper2 Studio_11]$ time ./race_cond 
+Starting race variable: 0
+After subtractor race variable: -340154
+After adder race variable: 0
+Final race variable: 0
+
+real    0m3.378s
+user    0m4.154s
+sys     0m2.138s
+
+Average: 3.143666... seconds real time
+
+ 2.9413333 seconds longer than the data corrupted threading.
+
+8) One lock per thread
+Starting race variable: 0
+After adder race variable: 20000000
+After subtractor race variable: 0
+Final race variable: 0
+
+real    0m0.144s
+user    0m0.134s
+sys     0m0.003s
+[campbellrobert@hopper2 Studio_11]$ time ./race_cond 
+Starting race variable: 0
+After adder race variable: 20000000
+After subtractor race variable: 0
+Final race variable: 0
+
+real    0m0.143s
+user    0m0.137s
+sys     0m0.001s
+[campbellrobert@hopper2 Studio_11]$ time ./race_cond 
+Starting race variable: 0
+After adder race variable: 20000000
+After subtractor race variable: 0
+Final race variable: 0
+
+real    0m0.169s
+user    0m0.161s
+sys     0m0.003s
+
+Average: 0.152 seconds real time
+    0.051333 seconds faster than the data corrupted threading.
+
+
+9)
+Locking per arithmetic operation cause significant slowdown for because the
+    operations of locking and unlocking were being executed just as many times
+    as the arithmetic. Even if the lock/unlock operations were 1 clock cycle each
+    that's 2 additional clocks for every arithmetic operation.
+
+Locking per thread allowed for time savings in creating the threads.
+
+10)
+Locking per iteration would be more useful if there were more operations occuring
+    between the lock and unlock. Basically, when locking and unlocking is comparatively
+    computationally inexpensive compared to the operations it is surrounding.
+Per thread locking would make more sense in situations like this, where there is a high
+    iteration count of a computationally inexpensive operation.

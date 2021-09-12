@@ -1,0 +1,4 @@
+point (0,0)
+point (-2,5)
+circle circle centered at (-2,5) with radius 10
+circle centered at (5,2) with radius 10

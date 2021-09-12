@@ -1,0 +1,87 @@
+---
+title: "Speed VS Precipitation check"
+author: "Mustafa Attallah"
+date: "4/19/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+data<- read.csv("https://mathstat.slu.edu/~clair/stat/data/sensor_D.csv")
+```
+
+# visualizing the data 
+```{r}
+data %>%  ggplot(aes(x = precipitation, y = speed_km))+geom_point()
+```
+We can hardly see any pattern! big chunk of the data is on **zero** precipitation and that is because most of the time it is not raining and the speed drop might be because of something else, like rush hours and incidents. 
+
+
+# Checking the normality of the Speed:
+```{r}
+hist(data$precipitation)
+qqnorm(data$precipitation)
+```
+
+
+
+```{r}
+#plot(density(data$speed_km), col = "green", main= "Density plot for Speed at D", ylim = c(0,0.1))
+#data %>% filter(precipitation == 0) %>% with(lines(density(speed_km), col = "red"))
+#data %>% filter(precipitation >10) %>% with(lines(density(speed_km), col ="blue"))
+data %>% ggplot(aes(x= speed_km))+geom_density(color ="black")+geom_density(aes(color = (precipitation >0)))
+
+# what do you think is gonna happen if we increase the precipitation filter values?
+```
+
+Hmm, see the **blue** line which is related to heavy rain observations! the speed isn't really distributed well here. 
+We can see that filtering the data for **zero** precipitation didn't really change how the data look like! however, we see that the plot looks thinner! as the speed is relatively try to be higher. Thus, we cannot apply t test on such skewed data. wilcoxon is a good approach to think about!
+
+
+
+### the hypotheses
+$H_o: \mu = 96.56$
+$H_a: \mu \ne 96.56$
+
+```{r}
+with(data, wilcox.test(speed_km, conf.int = T,mu = 96.56))
+
+data %>% 
+  filter(precipitation > 10) %>% 
+  with(wilcox.test(speed_km, conf.int = T,mu = 96.56))
+
+
+```
+
+**Decision** : There is enough evidence to **reject** the null hypothesis as **p_value** is less than **0.05**. 
+
+Interpretation: according to wilcoxen test above, We believe that the average speed is less than 96.56 km/h when it is raining. 
+
+
+
+
+In this step, a model is being built to check if there is any kind of correlation between the speed and precipitation rate.
+
+```{r}
+mod_D<- lm(speed_km~precipitation, data=data)
+summary(mod_D)
+ggplot(data, aes(x = precipitation, y = speed_km))+geom_point()+geom_smooth(method = "lm")
+```
+Some interpretations:
+```{r}
+plot(mod_D)
+data[520,]
+```
+
+

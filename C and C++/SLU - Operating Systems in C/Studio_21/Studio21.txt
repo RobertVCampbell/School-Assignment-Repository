@@ -1,0 +1,61 @@
+1) Robert Campbell
+2)
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:0d:7a:0c  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+3)
+inet 192.168.122.1
+There is no inet6 under virbr0
+
+4)
+ether 52:54:00:0d:7a:0c
+
+5)
+hopper2.slu.edu
+
+6)
+google.com has address 216.58.194.142
+google.com has IPv6 address 2607:f8b0:4000:80d::200e
+google.com mail is handled by 10 aspmx.l.google.com.
+google.com mail is handled by 20 alt1.aspmx.l.google.com.
+google.com mail is handled by 30 alt2.aspmx.l.google.com.
+google.com mail is handled by 40 alt3.aspmx.l.google.com.
+google.com mail is handled by 50 alt4.aspmx.l.google.com.
+
+7)
+[campbellrobert@hopper2 campbellrobert]$ host slu.edu
+slu.edu has address 173.213.236.59
+slu.edu mail is handled by 10 mxa-00234e01.gslb.pphosted.com.
+slu.edu mail is handled by 20 mxb-00234e01.gslb.pphosted.com.
+[campbellrobert@hopper2 campbellrobert]$ host slu.edu
+slu.edu has address 173.213.236.59
+slu.edu mail is handled by 20 mxb-00234e01.gslb.pphosted.com.
+slu.edu mail is handled by 10 mxa-00234e01.gslb.pphosted.com.
+[campbellrobert@hopper2 campbellrobert]$ host slu.edu
+slu.edu has address 173.213.236.59
+slu.edu mail is handled by 10 mxa-00234e01.gslb.pphosted.com.
+slu.edu mail is handled by 20 mxb-00234e01.gslb.pphosted.com.
+
+It is only returning the one IP. Regardless, it could map to
+multiple IP address because the domain is associated with a range of addresses.
+
+8)
+1 Physical: telephone modems
+    The translation of a digital signal over an analog medium
+2 Data Link: Ethernet
+    This establishes immediate links between hardware on a network
+    This is how the above signals get routed
+3 Network layer: Internet Protocol
+    This is a method of addressing across/between different networks
+4 Transport Layer: UDP/TCP
+    This is how packets are handled in their transmission across networks
+5 Session Layer:h.245
+    This keeps track of communication between end nodes in terms of sessions, often used for authentication
+6 Presentation Layer: SSH
+
+7 Application Layer: HTTPS

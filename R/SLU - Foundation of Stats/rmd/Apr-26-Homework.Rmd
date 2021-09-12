@@ -1,0 +1,164 @@
+---
+title: 'Homework #09'
+author: "Robert Campbell"
+date: "26 Apr 2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+library(dplyr)
+#library(ggplot2)
+#library(tidyr)
+#library(stringr)
+
+
+# Homework Problems:
+# Ch 9 Exercises # 2, 4, 6, 9, 10, 11, 15, 16
+```
+
+
+## Chapter 09
+### Problem 02   
+```{r}
+2*sum(dsignrank(601:1000,40))
+```
+
+### Problem 04   
+```{r}
+x <- c(-1,0,2,8)
+mu <- 3
+xdif <- x-mu
+xrank<-rank(abs(xdif))
+#sum(xrank[xdif > 0])
+v<-0:10
+plot(v,dsignrank(v,4))
+2*(sum(dsignrank(0:4, 4)))
+
+wilcox.test(x, mu=mu)
+```
+
+### Problem 06   
+
+  a. The data seems reasonably symmetric.
+```{r}
+weight<- fosdata::weight_estimate$mean200
+boxplot(weight)
+```   
+  b. The weight that was estimated by the population was not close to the actual weight of the object.
+```{r}
+wilcox.test(weight, mu=200)
+```   
+
+### Problem 09   
+  a.
+```{r, warning=FALSE, message=FALSE}
+sparrow<-Sleuth3::ex0221
+boxplot(sparrow$Humerus[sparrow$Status == "Perished"])
+boxplot(sparrow$Humerus[sparrow$Status == "Survived"])
+```   
+  b. 
+```{r, warning=FALSE, message=FALSE}
+wilcox.test(Humerus ~ Status, data=sparrow)
+```
+   
+  c. No, there is not enough evidence to conclude that there is significant difference in Humerus length between the two populations.
+
+### Problem 10   
+  a. Yes, there is significant difference in the height of the flowers.
+```{r, message=FALSE, warning=FALSE}
+flower<- Sleuth3::ex0428
+wilcox.test(flower$Cross, flower$Self)
+```
+   
+  b. Both datasets are skew with one significant outlier.
+```{r}
+boxplot(flower$Cross)
+boxplot(flower$Self)
+```
+  
+### Problem 11   
+  a. Hypothesis: There will be significant difference in antibody levels between the sample with malaria symptoms and the sample without.   
+    P = 2.127e-05, reject the null, there is significant difference in antibody levels.
+```{r}
+malaria <- ISwR::malaria
+wilcox.test(ab ~ mal, data=malaria)
+```
+   
+  b. No, the data is not normal and does not meet the assumptions of the t.test
+```{r}
+hist(malaria$ab[malaria$mal == 0])
+hist(malaria$ab[malaria$mal == 1])
+```
+   
+  c. Taking the log of the data does make it roughly normal, making the t.test more viable.
+```{r}
+hist(log(malaria$ab[malaria$mal == 0]))
+hist(log(malaria$ab[malaria$mal == 1]))
+```
+   
+  d. Like the Wilcoxon test, this does show significance with a p-value of 2.376e-05. However, the p-value from the t.test is larger than the Wilcoxon p-value 2.127e-05, the difference is likely due to the fact that even the log of the data is still not completely normal.
+```{r}
+t.test(log(ab) ~ mal, data=malaria)
+```
+
+### Problem 15   
+  a. ~16% of the time
+```{r}
+test<-replicate(10000,{x<-rnorm(100,0.1,1); t.test(x, mu=0)$p.value})
+mean(test<0.05)
+```
+   
+  b. ~16% of the time
+```{r}
+test<-replicate(10000,{x<-rnorm(100,0.1,1); wilcox.test(x, mu=0)$p.value})
+mean(test<0.05)
+```
+   
+  c. t.test: ~88% of the time
+```{r}
+test<-replicate(10000,{x<-rnorm(1000,0.1,1); t.test(x, mu=0)$p.value})
+mean(test<0.05)
+```
+   
+     wilcox.test: ~88% of the time
+```{r}
+test<-replicate(10000,{x<-rnorm(1000,0.1,1); wilcox.test(x, mu=0)$p.value})
+mean(test<0.05)
+```
+   
+  d. Since their accuracy is similar, anecdotally I'd suggest running t.test as wilcox.test took significantly longer with larger n.  
+
+### Problem 16   
+  a.
+    i. The true mean is 0
+    ii. Type-II
+  b. Continuing the assumptions from a, a Type-I error has 0% probability of occurring as it cannot happen when the null is false.
+  c. Type-I error has 0% probability of occurring as it cannot happen when the null is false.
+  d. Type-II error has ~1.2% probability of occurring in a t.test
+```{r}
+pvals <- replicate(10000, {
+  x <- rt(20, df=86)
+  t.test(x, mu=1)$p.value
+})
+power<- mean(pvals < 0.05)
+1 - power
+```
+  e. Type-II error has ~1.7% probability of occurring in a wilcox.test
+```{r}
+pvals <- replicate(10000, {
+  x <- rt(20, df=86)
+  wilcox.test(x, mu=1)$p.value
+})
+power<- mean(pvals < 0.05)
+1 - power
+```
+   
+  f. It looks like t.test is more powerful when used on a t-distribution of data.
+

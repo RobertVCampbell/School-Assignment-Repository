@@ -1,0 +1,64 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port Reset -pg 1 -lvl 0 -x -40 -y 190 -defaultsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x -40 -y 270 -defaultsOSRD
+preplace port dp_0 -pg 1 -lvl 6 -x 1930 -y 1180 -defaultsOSRD
+preplace port sda_0 -pg 1 -lvl 6 -x 1930 -y 980 -defaultsOSRD
+preplace port scl_0 -pg 1 -lvl 6 -x 1930 -y 960 -defaultsOSRD
+preplace port Myen_sw_0 -pg 1 -lvl 0 -x -40 -y 500 -defaultsOSRD
+preplace port Myrst_sw_0 -pg 1 -lvl 0 -x -40 -y 530 -defaultsOSRD
+preplace portBus A_0 -pg 1 -lvl 6 -x 1930 -y 1150 -defaultsOSRD
+preplace portBus LED_0 -pg 1 -lvl 6 -x 1930 -y 1220 -defaultsOSRD
+preplace portBus debug -pg 1 -lvl 6 -x 1930 -y 1010 -defaultsOSRD
+preplace inst microblaze_0 -pg 1 -lvl 3 -x 860 -y 90 -defaultsOSRD
+preplace inst microblaze_0_local_memory -pg 1 -lvl 4 -x 1280 -y 100 -defaultsOSRD
+preplace inst microblaze_0_axi_periph -pg 1 -lvl 4 -x 1280 -y 350 -defaultsOSRD
+preplace inst mdm_1 -pg 1 -lvl 5 -x 1670 -y 360 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 1 -x 110 -y 260 -defaultsOSRD
+preplace inst rst_clk_wiz_1_100M -pg 1 -lvl 2 -x 430 -y 210 -defaultsOSRD
+preplace inst sevenseg_0 -pg 1 -lvl 5 -x 1670 -y 1200 -defaultsOSRD
+preplace inst myAXIip_0 -pg 1 -lvl 5 -x 1670 -y 580 -defaultsOSRD
+preplace inst i2c_master_0 -pg 1 -lvl 5 -x 1670 -y 940 -defaultsOSRD
+preplace netloc microblaze_0_Clk 1 1 4 200 110 600 180 1130 490 1460
+preplace netloc clk_wiz_1_locked 1 1 1 210 250n
+preplace netloc rst_clk_wiz_1_100M_mb_reset 1 2 1 610 120n
+preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 2 2 N 190 1110J
+preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 2 3 N 250 1110 540 1480
+preplace netloc mdm_1_debug_sys_rst 1 1 5 220 500 NJ 500 NJ 500 1430J 260 1840
+preplace netloc Reset_1 1 0 2 -20 190 NJ
+preplace netloc sys_clock_1 1 0 1 NJ 270
+preplace netloc myAXIip_0_Myreset_n 1 4 2 1520 1070 1880
+preplace netloc myAXIip_0_Myena 1 4 2 1490 270 1830
+preplace netloc myAXIip_0_MyinputNum 1 4 2 1510 770 1830
+preplace netloc sevenseg_0_A 1 5 1 1840 1150n
+preplace netloc sevenseg_0_dp 1 5 1 1890 1180n
+preplace netloc sevenseg_0_LED 1 5 1 N 1220
+preplace netloc i2c_master_0_samp 1 4 2 1520 750 1820
+preplace netloc i2c_master_0_data_ready 1 4 2 1520 250 1870
+preplace netloc i2c_master_0_busy 1 4 2 1500 730 1860
+preplace netloc i2c_master_0_ack_error 1 4 2 1510 240 1890
+preplace netloc i2c_master_0_data_rd 1 4 2 1510 740 1850
+preplace netloc Net 1 5 1 1900 970n
+preplace netloc Net1 1 5 1 1890 960n
+preplace netloc Myen_sw_0_1 1 0 5 NJ 500 200J 490 NJ 490 1100J 520 1470J
+preplace netloc Myrst_sw_0_1 1 0 5 NJ 530 NJ 530 NJ 530 NJ 530 NJ
+preplace netloc myAXIip_0_Mydata_done 1 4 2 1520 760 1840
+preplace netloc i2c_master_0_debug 1 5 1 N 1010
+preplace netloc microblaze_0_axi_periph_M01_AXI 1 4 1 1450 360n
+preplace netloc microblaze_0_ilmb_1 1 3 1 N 90
+preplace netloc microblaze_0_mdm_axi 1 4 1 N 340
+preplace netloc microblaze_0_debug 1 2 4 620 510 NJ 510 1440J 280 1820
+preplace netloc microblaze_0_dlmb_1 1 3 1 N 70
+preplace netloc microblaze_0_axi_dp 1 3 1 1120 110n
+levelinfo -pg 1 -40 110 430 860 1280 1670 1930
+pagesize -pg 1 -db -bbox -sgen -170 -120 2050 1280
+"
+}
+{
+   "da_axi4_cnt":"3",
+   "da_board_cnt":"4",
+   "da_clkrst_cnt":"3",
+   "da_mb_cnt":"1"
+}

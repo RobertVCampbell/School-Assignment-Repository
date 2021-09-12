@@ -1,0 +1,160 @@
+---
+title: 'Homework #04'
+author: "Robert Campbell"
+date: "03 Mar 2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, echo=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+suppressWarnings(suppressMessages(library(dplyr)))
+# Homework Problems:
+# Ch 3 Exercises # 18, 30, 31
+# Ch 4 Exercises # 1,2,6,7,8,11,12,15,17,19,20,21,22
+
+```
+
+## Chapter 03
+```{r}
+trials <- 100000
+```
+### Problem 18
+```{r}
+x <- rgeom(trials,.09)
+y <- x + 1
+mean(y==20)
+```
+
+### Problem 30
+  $\frac{Var(eN)}{E[eN]} = \frac{e^2*Var(N)}{e*E[N]} = \frac{eN}{N} = e$
+
+### Problem 31
+****Requires infinite of e^x
+  1 + x + x^2 / 2!  + x^3 / 3! + ...
+  
+
+
+## Chapter 04
+
+### Problem 01
+ a. $P(X \geq0.5)=\int_.5^1 2x\ dx = \frac{1^2 * 2}{2} - \frac{0.5^2 * 2}{2} = 1 - .25 = .75$
+ b. $P(X\geq 0.5 | X\geq0.25) = \frac{P(X\geq 0.5 \& X\geq0.25)}{P(X\geq0.25)}$
+    $\frac{\int_.5^1 2x\ dx}{\int_.25^1 2x\ dx} = \frac{0.75}{1 - 0.25^2} = \frac{.75}{0.9375} = 0.8$
+
+### Problem 02
+  $1 = \int_0^1 Cx^2\ dx + \int_1^2C(2-x)^2\ dx = C*[\int_0^1x^2\ dx + \int_1^2(2-x)^2\ dx]$
+  $1 = C*[\frac{1}{3} + \frac{1}{3}]$
+  $C = \frac{3}{2}$
+
+### Problem 06
+  a. $1 = \int_0^13*(1-x)^2\ dx = 3 * -\int_1^0u^2\ du = 3 * [\frac{1}{3} - \frac{0}{3}] = 1$
+  b. $Mean = \int_0^1 3x(1-x)^2\ dx = 0.25$
+     $Var = \int_0^1 3x^2(1-x)^2\ dx - Mean^2 = 0.1 - 0.0625 = 0.0375 $
+  c. $P(x \leq 0.5) = \int_0^.5 3*(1-x)^2\ dx = 0.875$
+  d. $P(x\leq 0.5 | x \geq 0.25)= \frac{P(x\leq 0.5\ \&\ x \geq 0.25)}{P(x\geq0.25)} = \frac{\int_.25^.5 3*(1-x)^2\ dx}{\int_.25^1 3*(1-x)^2\ dx}$
+     $\frac{\frac{19}{64}}{\frac{27}{64}} = \frac{19}{27} = 0.703704$
+
+### Problem 07
+  $Var(x) = 3$
+  $Var(2x+1) = 2^2 * Var(X) + Var(1) = 4 * 3 + 0 = 12$
+  
+### Problem 08
+  a. Estimate mean: 1
+  b. Estimate sd: 1
+  c. a = 0
+  d. Lower bound estimate $P(0 <= x <=2): 0.225 * 2 = 0.45 $
+### Problem 11
+  a. 
+```{r}
+1 - pnorm(85, 80, 5)
+```
+  b.
+```{r}
+  mean(replicate(trials, sum(rnorm(10,80,5)>=85))>3)
+```
+
+### Problem 12
+  a.
+```{r}
+hist(rnorm(trials, 5036, 122))
+```
+  b. 0, the probability of a specific number occuring in a continuous probability function is 0. The question could be modified to ask "what is the probability of the rope breaking at more than 5000lbs, but less than 5001lbs, which could be calculated as:
+```{r}
+pnorm(5001, 5036,122) - pnorm(5000, 5036, 122)
+```
+
+  c.
+```{r}
+qnorm(.95,5036,122)
+```
+
+### Problem 15
+```{r}
+x <- seq(0,1,.1)
+plot(x, dunif(x,0,1),type='l') 
+plot(x, punif(x,0,1),type='l') 
+```
+
+### Problem 17
+```{r}
+x <- rexp(trials,0.25)
+```
+  a.
+```{r}
+mean(x)
+```
+  b. By inspection, it would be a = 0 and does not contain the mean.
+
+### Problem 19
+```{r}
+c1<- rexp(trials, 1/5)
+c2<- rexp(trials)
+mean(pmax(c1,c2)<10)
+
+```
+
+### Problem 20
+See attached handwritten work.
+
+### Problem 21
+  a. It is called the memoryless property because previous events do not affect the probability of the next event.
+  b. $P(X\geq a)\int_a^\infty \lambda e^{-\lambda x}\ dx = \frac{-\lambda e^{-\lambda x}}{\lambda}|_a^\infty$
+     $0 - (-e^{-a\lambda}) = e^{-a\lambda}$
+  c. 
+
+### Problem 22
+  a. Binomial
+  P(Y==3):
+```{r}
+dbinom(3,10,1/6)
+dice<-rbinom(trials,10,1/6)
+mean(dice)
+var(dice)
+``` 
+  b. Poisson, in accidents per week
+```{r}
+dpois(2,2)
+traf<-rpois(trials,2)
+mean(traf)
+var(traf)
+```
+  c. Uniform, $Mean = \frac{60-0}{2} = 30$
+  d. Exponential with rate in customers per hour 
+```{r}
+cust <- rexp(trials,5)
+mean(cust)
+mean(cust<(10/60))
+```
+  e. Geometric
+```{r}
+coin <- rgeom(trials,.5)
+mean(coin)
+mean(coin<4)
+```
+  f. Normal, mean of 98.6F, var of $100F - 98.6F = 1.4F$

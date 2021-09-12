@@ -1,0 +1,130 @@
+---
+title: 'Homework #06'
+author: "Robert Campbell"
+date: "24 Mar 2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, echo=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(ggplot2)))
+suppressWarnings(suppressMessages(library(babynames)))
+suppressWarnings(suppressMessages(library(tidyr)))
+suppressWarnings(suppressMessages(library(stringr)))
+# Homework Problems:
+# Ch 6 Exercises # 1,4,5,8,9,13,15,19-23,26,28
+```
+
+
+## Chapter 06
+### Problem 01
+```{r}
+quakes %>% ggplot(aes(x=lat, y=long, color=depth, size=mag)) + geom_point()
+```
+
+### Problem 04
+```{r}
+fosdata::brake %>% ggplot(aes(x=p1_p2)) + geom_density()
+```
+  a. The data is skewed
+  b. The most likely time appears to be about 1125ms
+  
+### Problem 05
+```{r}
+fosdata::brake %>% ggplot(aes(sample=latency_p1)) + geom_qq() + geom_qq_line()
+```
+The data appears to be normal, but right skewed
+
+### Problem 08
+```{r}
+fosdata::austen %>% filter(novel=="Pride and Prejudice") %>% group_by(chapter) %>% 
+  summarize(sentiment = mean(sentiment_score)) %>%
+  ggplot(aes(x=sentiment, y=chapter, color=chapter)) + geom_col()
+```
+
+### Problem 09
+```{r}
+suppressWarnings(suppressMessages(ISwR::juul %>% ggplot(aes(x=age, y=igf1,color=tanner)) +
+                   geom_point() + geom_line() + geom_smooth()))
+```
+  c. Smooth seems to fit as the data does seem to more or less follow the trendline
+     Line does not seem appropriate as the data jumps around that trendline in clusters
+
+### Problem 13
+```{r}
+suppressWarnings(suppressMessages(fosdata::pres_election %>% mutate(party=factor(party)) %>%
+  group_by(party, year) %>% summarize(votes=sum(candidatevotes,na.rm=TRUE)) %>%
+  ggplot(aes(x=party, y=votes,fill=party)) + geom_col() + facet_wrap(vars(year))))
+```
+
+### Problem 15
+  a.
+```{r}
+Lahman::Batting %>% group_by(yearID) %>% ggplot(aes(x=yearID, y=X2B, color=yearID)) + geom_point()
+```
+  b.
+```{r}
+suppressWarnings(suppressMessages(Lahman::Batting %>% group_by(yearID,lgID) %>%
+  filter(lgID == c("AL", "NL")) %>% ggplot(aes(x=yearID, y=X2B, color=lgID)) +
+    geom_point() + scale_color_manual(values = c("red1","blue"))))
+```
+
+### Problem 19
+```{r}
+suppressWarnings(suppressMessages(babynames %>% group_by(year, sex) %>% summarize(births = sum(n)) %>% 
+  ggplot(aes(x=year, y=births, color=sex)) + geom_line()))
+```
+### Problem 20
+```{r}
+suppressWarnings(suppressMessages(babynames %>% group_by(year, sex) %>%
+  summarize(u_names = n()) %>% ggplot(aes(x=year, y=u_names, color=sex)) +
+    geom_line()))
+```
+
+### Problem 21
+```{r}
+babynames %>% filter(name %in% "Robert", sex=="M") %>%
+  ggplot(aes(x=year,y=n)) + geom_line()
+```
+
+### Problem 22
+```{r}
+suppressWarnings(suppressMessages(babynames %>% filter(name %in% c("Bryan", "Brian"), sex=="M") %>%
+  ggplot(aes(x=year,y=n, color=name)) + geom_line()))
+```
+
+### Problem 23
+```{r}
+suppressWarnings(suppressMessages(babynames %>% filter(name %in% "Jessie") %>%
+  ggplot(aes(x=year,y=n, color=sex)) + geom_line()))
+```
+  - More male than female (~1950-1980)
+  - More female than male (prior to 1950)
+  - About the same (1980 and later)
+  
+  
+### Problem 26
+  a.
+```{r, echo=FALSE}
+tidy_data<-fosdata::scotland_births %>% pivot_longer(!age, names_to="Year", values_to="Births")
+tidy_data$Year<-str_remove(tidy_data$Year, "x")
+tidy_data$Year<-as.integer(tidy_data$Year)
+tidy_data %>% group_by(age,Year) %>% ggplot(aes(x=Year,y=Births, group=age)) + geom_line()
+```
+  b.
+```{r}
+tidy_20<-tidy_data %>% filter(age == 20)
+tidy_30<-tidy_data %>% filter(age==30)
+tidy_data %>% group_by(age,Year) %>% ggplot(aes(x=Year,y=Births, group=age)) +
+  geom_line() +geom_line(data=tidy_20, aes(x=Year,y=Births),color='red')+
+geom_line(data=tidy_30, aes(x=Year,y=Births),color='blue') + labs(title="Scotland Births Over Time by Mother's Age \nRed: Age 20 \tBlue: Age 30")
+```
+### Problem 28
+

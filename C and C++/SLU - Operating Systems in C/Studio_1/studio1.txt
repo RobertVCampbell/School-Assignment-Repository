@@ -1,0 +1,41 @@
+1)
+Robert Campbell and Justin Davis
+
+2)
+#include <stdio.h>
+#include <stdarg.h>
+
+3)
+printf contains a string that can contain flag characters with details for the flag characters.
+printf("String with %f" , num)
+fprintf has one extra argument for where the output is going.
+
+4)
+printf writes the output to stdout
+fprintf writes to the given output stream
+
+5)
+Hello world!
+[campbellrobert@hopper2 campbellrobert]$ 
+
+6)
+2   System calls
+
+7)
+#include <unistd.h>
+
+8)
+
+9)
+Hello world!
+[campbellrobert@hopper2 campbellrobert]$ 
+
+10)
+It continues outputting chars after the newline.
+This is happening because it is trying to resolve whatever value is in the following memory
+locations to an ascii character.
+
+11)
+Using the C standard library would be useful any time you don't want to worry about the specific
+platform you're on.
+Using a system call would be platform specific, but should be more efficient.

@@ -1,0 +1,8 @@
+Name: Robert Campbell
+Total: 10/10 points
+
+Readme: .5/.5
+
+Code for tree creation: 5.5/5.5
+
+Code for decoding: 4/4

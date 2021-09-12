@@ -1,0 +1,61 @@
+---
+title: "Take Home Quiz 1"
+author: "Your Name"
+date: "Due Monday Feb 15 at 1:00pm"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+This quiz should take you approximately 25 minutes. 
+Place your answers into this markdown document, knit it, and hand in the result as a PDF.
+You may use R, the internet, and any reference material,
+but do not work together and do not get help (except from Dr. Clair).
+
+### Problem 1
+Use R to calculuate the sum $\sqrt{1} + \sqrt{2} + \sqrt{3} + \dots + \sqrt{1000}$
+
+### Problem 2
+This problem uses the vector `islands` which is built in to R.
+
+a. Make a histogram of the landmass sizes.
+
+b. What is the median size of these large landmasses?
+
+c. What is the average size of these large landmasses?
+
+d. What is the total area of all landmasses in this data set?
+
+### Problem 3
+This problem uses the data set `chimps` from the `fosdata` package.
+
+a. How many observations are in this data set?
+
+b. How many variables are in this data set?
+
+c. How many male and female chimpanzees are there?
+
+d. What is the name of the oldest chimpanzee?
+
+### Problem 4
+Blood types O, A, B, and AB \index{blood type} have the following probabilities in the United States:
+
+Type        |   O  |   A  |  B   |  AB
+------------|------|------|------|------
+Probability | 0.45 | 0.40 | 0.11 | 0.04
+
+a. What is the probability that a randomly selected person is *not* type O.
+
+b. What is the probability that a randomly selected person is either type B or AB?
+
+c. If you select 10 people at random, what is the probability that at least one of them is type AB?
+
+## Problem 5
+Roll two ordinary six-sided dice.
+
+a. What is the probability that the sum of the dice is 6?
+
+b. What is the probability that at least one of the dice is 4?
+
+c. What is the probability that the sum of the dice is 6, given that at least one of the dice is a 4?
+

@@ -1,0 +1,2 @@
+This class did not have a proper lab section and most VHDL design work was in the homework assignments, which were submitted as .docx and .pdf files.
+There are a handful of .vhd designs in Lab2 and Lab2a.

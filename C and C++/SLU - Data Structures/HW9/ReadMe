@@ -1,0 +1,5 @@
+Assignment 9: Decode
+Created by Robert Campbell
+
+An algorithm that will recursively decode text based off of the assignment specifications, using Binary Tree traversal.
+All commented out lines were used for debugging.

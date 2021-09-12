@@ -1,0 +1,22 @@
+Group 1: Output
+Group 2: time
+Group 3: units
+
+Find:
+(?:[A-z]*: )(?:\w*) (\d*) (?:\w*\s)*(?:[A-z]*: )(\d*) (\w*)(?:.*)
+
+Sample lines to parse:
+Note: Read 14 from address 12290
+Time: 9875875 ns  Iteration: 1  Process: /board/ISA_bus/command_process  File: C:/vivado/ISA2/ISA2.srcs/sim_1/imports/ISA_fixed_new/ISA_bus.vhd
+
+
+
+(a)Replace including time units:
+\1,\2,\3
+(b)Replace excluding time units:
+\1,\2
+
+(c) Replace in Matlab matrix syntax (time as x, amp as y, no brackets):
+\2 \1;
+
+

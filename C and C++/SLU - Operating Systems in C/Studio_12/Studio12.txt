@@ -1,0 +1,67 @@
+1) Robert Campbell
+
+2)
+type __sync_add_and_fetch (type *ptr, type value, ...)
+Performs the operation at the memory location and returns the new value
+
+So the value at the pointer location in the first parameter will be added
+with the value in the second parameter and the sum will be returned.
+
+3)
+x before: 0
+x after: 10
+
+4)
+[campbellrobert@hopper2 Studio_12]$ ./race_cond 
+Starting race variable: 0
+After subtractor race variable: -101186
+After adder race variable: 0
+Final race variable: 0
+
+5)
+Starting race variable: 0
+After adder race variable: 10549032
+After subtractor race variable: 0
+Final race variable: 0
+
+real    0m0.763s
+user    0m1.419s
+sys     0m0.004s
+[campbellrobert@hopper2 Studio_12]$ time ./race_cond 
+Starting race variable: 0
+After adder race variable: 5897286
+After subtractor race variable: 0
+Final race variable: 0
+
+real    0m0.814s
+user    0m1.539s
+sys     0m0.002s
+[campbellrobert@hopper2 Studio_12]$ time ./race_cond 
+Starting race variable: 0
+After subtractor race variable: -5513537
+After adder race variable: 0
+Final race variable: 0
+
+real    0m0.772s
+user    0m1.479s
+sys     0m0.003s
+
+Average: 0.783s real time
+
+
+6) Locking and unlocking for each increment/decrement was slower
+    Average: 3.143666 real time
+
+7) 
+Atomic instructions are ~ 4 times faster than mutex Locking
+
+8)
+Average: 0.20233 seconds real time
+    Atomic instructions are 3.86 times slower
+    Difference of 0.580666 seconds real time.
+
+9)
+Mutex locking would be prefered when there are a large number of operations
+that need to happen between the lock and unlock.
+Atomic instructions would be preferred when individual computations need to be done.
+

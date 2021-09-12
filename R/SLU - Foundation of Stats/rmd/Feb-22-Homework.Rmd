@@ -1,0 +1,142 @@
+---
+title: 'Homework #03'
+author: "Robert Campbell"
+date: "22 Feb 2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, echo=FALSE}
+# This line makes your figures smaller (you want to do this!)
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+
+# This code loads the dplyr library
+# You often want to load libraries at the start of your file
+suppressWarnings(suppressMessages(library(dplyr)))
+# Homework Problems:
+# 1, 3, 5, 7, 9, 11, 14, 15, 16, 17, 19, 21, 23
+
+```
+
+## Chapter 03
+
+### Problem 01
+  a. p(x) is a valid probability mass function 
+     $\frac{1}{4} + \frac{1}{2} + \frac{1}{8} + \frac{1}{8} = 1$
+  b. $P(X\geq2) = \frac{1}{8} + \frac{1}{8} = \frac{1}{4}$
+  c. $P(X\geq2 | X\geq1) =\frac{1}{2} + \frac{1}{8} + \frac{1}{8} = \frac{5}{8}$
+  d. $P(X\geq2 \bigcup X\geq1) =\frac{1}{2} + \frac{1}{8} + \frac{1}{8} = \frac{5}{8}$
+  
+### Problem 03
+  $1 = C(1+\frac{1}{2}+\frac{1}{4})$
+  $\frac{1}{C} = \frac{7}{4}$
+  $C = \frac{4}{7}$
+
+### Problem 05
+```{r}
+X <- c(0,1,2,3)
+prob <- c(1/4, 1/2, 1/8, 1/8)
+mean(sample(X, 10000, prob, replace=TRUE))
+```
+
+### Problem 07
+```{r}
+d1 <- sample(c(1,2,3,4,5,6), 10000, replace=TRUE)
+d2 <- sample(c(1,2,3,4,5,6), 10000, replace=TRUE)
+mean(d1*d2)
+```
+
+### Problem 09
+  0:999 has 1000 numbers with 10 possible 2 digit numbers(0:9), 90 possible 3 digit numbers(10:99), and 900 3 digit numbers(100:999).
+  ```{r}
+  mean(sample(c(1,2,3), 10000, prob=c(1/1000, 90/1000, 900/1000), replace=TRUE))
+  ```
+
+### Problem 11
+  Bernoulli trial, red being a win, with p = 18/38
+  a. Expected value is np, so the expected payout would be \[\$1 * \frac{18}{38} = \$0.47\]
+  b. $P(A|B)=\frac{P(A\&B)}{P(B)}= \frac{\frac{18}{38}*\frac{18}{38}}{\frac{18}{38}}=\frac{18}{38}$
+     The expected payout would be $\$2 * \frac{18}{38} = \$0.97$
+
+### Problem 14
+Note: According to the website's probabilities, you can win a front pair and a straight so I am treating the "don't care" portions of the probabilities ignoring the better results. The other option would be to change front and back pair to 9/1000 instead of 1/100. This same logic will carry throughout the problem.
+  a. $\frac{1}{10} * \frac{1}{10} * \frac{1}{10} = \frac{1}{1000}$
+  b. $\frac{1}{10} * \frac{1}{10} * \frac{10}{10} = \frac{1}{100}$
+  c. $\frac{10}{10} * \frac{1}{10} * \frac{1}{10} = \frac{1}{100}$
+  d. $\frac{3}{10} * \frac{2}{10} * \frac{1}{10} = \frac{6}{1000}$
+  e. 
+  f. 
+
+### Problem 15
+$E[X] = \sum_1^k(X*p(x)) = \frac{k(k+1)}{2}$
+
+### Problem 16
+  a. 
+  ```{r}
+  test <- rbinom(10000, 20, .25)
+  (mean(test)/20)*100
+  ```
+  b. 
+  ```{r}
+  (sum(test>=10)/10000)
+  ```
+### Problem 17
+  a. 
+  ```{r}
+  x <- rbinom(10000,10, .91)
+  mean(x)
+  ```
+  b.
+  ```{r}
+  (sum(x >= 8)/10000)
+  ```
+  
+### Problem 19
+X <- rbinom(trials, 200, .55)
+plot(table(X))
+mean(X)
+var(X)
+# sd is sqrt(np(1-p))
+sd(X)
+# margin of error
+2*sd(X)/200
+X < 100 # This is the event that prop A looks like it will fail
+
+  a. Expected number of votes:
+  ```{r}
+  x <- rbinom(10000, 200, .55)
+  mean(x)
+  ```
+  b. Margin of error in percent of votes:
+  ```{r}
+  (2*sd(x))/200 * 100
+  ```
+  c. Probability prop A will fail?
+  ```{r}
+  (sum(x<100)/10000)
+  ```
+  d.
+  $2\% = \frac{2*\sqrt{n(.55)(1-.55)}}{n}$
+  $(.01n)^2 = n(.55)(.45)$
+  $n = $
+
+### Problem 21
+  a. $P(y): 1/4, y = -1; 1/2, y = 0; 1/8, y =1; 1/8, y=2$
+  b. $P(u): 1/4, u = 0; 1/2, u = 1; 1/8, u=4; 1/8, u = 9$
+  c. $P(v): 1/2, v=0; 3/8, v = 1; 1/8, v = 4$
+
+### Problem 23
+```{r}
+X <- c(0,1,2,3)
+prob <- c(1/4, 1/2, 1/8, 1/8)
+y <- sample(X, 10000, prob, replace=TRUE)
+```
+  Variance:
+  ```{r}
+  var(y)
+  ```
+  Standard Deviation:
+  ```{r}
+  sd(y)
+  ```

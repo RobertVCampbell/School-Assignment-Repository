@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:C:/work/test/test.srcs/constrs_1/new/TEST.xdc rfile:../../../test.srcs/constrs_1/new/TEST.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V17 [get_ports a]
+set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U16 [get_ports b]

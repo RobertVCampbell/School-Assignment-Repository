@@ -1,0 +1,20 @@
+1) Robert Campbell
+
+2) (2^30) / (4 * (2^10)) = 262,144
+
+3) (2^48) addresses = 281,474,976,710,656 addressable bytes
+    (2^30) / (4 * (2^10)) = 68,719,476,736
+
+4) 10500/4096 = Page 2, decimal byte address 0d2308
+
+5) (67 * 4096) + 0d2308 = 0d276740 or 0x43904
+
+6) (15*(2^30)) / 4096 = 3,932,160 pages, so at least that many guaranteed page faults
+
+7) (15*(2^30)) / (32 * (2^10)) = 491,520 pages, so at least that many page faults are guaranteed
+
+8) For large page sizes, individual programs will have fewer page faults just because more data is loaded at a time.
+    For small page sizes, running multiple programs can have pages loaded making it so there are fewer
+        page faults between different programs operations.
+
+9) A full page will be loaded, which is typically 4KB

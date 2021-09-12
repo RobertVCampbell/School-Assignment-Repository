@@ -1,0 +1,61 @@
+1) Aaron Sala, Joe Sloyan, Robert Campbell
+2)
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#define bufferSize 100000
+char buffer[bufferSize];
+int count;
+
+int main(int argc, char* argv []){
+    
+    if(argc != 2){
+        perror("Should only have one arguement.");
+        exit(-1);
+    }
+
+    int fd_in = open(argv[1], O_RDONLY);
+    while(1){
+        count = (read(fd_in, buffer, bufferSize));
+        if( count == 0){
+            exit(0);
+            break;
+        }
+        else{
+            write(STDOUT_FILENO, buffer, count);
+        }
+    }
+    return 0;
+}
+3)
+It enters a newline and waits there.
+4)
+It acts the same as when an invalid filename is entered
+5)
+-1 is returned if there is an error
+6 & 7)
+int fd_in = open(argv[1], O_RDONLY);
+if(fd_in == -1){
+    perror("Invalid filename");
+    exit(-1);
+}
+8)
+9)
+Outputs an error and exits.
+Invalid filename: No such file or directory
+10)
+Outputs a different error.
+Invalid filename: Permission denied
+11)
+Open: returns -1 and sets errno
+close: returns -1 and sets errno
+read: returns -1 and sets errno
+write: returns -1 and sets errno
+printf: returns "a negative value" does not set errno
+12)
+It allows for a common way to check if a function errored out (a negative return).
+By updating a system level error, only one place needs to be referenced to find the specifics of the error.

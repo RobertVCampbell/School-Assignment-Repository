@@ -1,0 +1,4 @@
+Running: xsim.dir/i2c_master_time_synth/xsimk.exe -simmode gui -wdb i2c_master_time_synth.wdb -simrunnum 0 -socket 60779
+Design successfully loaded
+Design Loading Memory Usage: 6212 KB (Peak: 6212 KB)
+Design Loading CPU Usage: 62 ms

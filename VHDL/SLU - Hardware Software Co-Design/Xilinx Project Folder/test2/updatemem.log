@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# updatemem v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# 
+# Start of session at: Thu Dec  3 15:11:16 2020
+# Process ID: 2184
+# Current directory: C:/Users/campbellrobert/Desktop/final/test2
+# Command line: updatemem.exe -mode batch -source C:/Xilinx/SDK/2019.1/scripts/updatemem/main.tcl -notrace -tclargs -meminfo C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.mmi -data C:/Xilinx/SDK/2019.1/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc design_1_i/microblaze_0 -bit C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit -out C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper_hw_platform_0/download.bit -force
+# Log file: C:/Users/campbellrobert/Desktop/final/test2/updatemem.log
+# Journal file: C:/Users/campbellrobert/Desktop/final/test2\updatemem.jou
+#-----------------------------------------------------------
+source C:/Xilinx/SDK/2019.1/scripts/updatemem/main.tcl -notrace
+ Loading bitfile C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Writing bitstream C:/Users/campbellrobert/Desktop/final/test2/test2.sdk/design_1_wrapper_hw_platform_0/download.bit...
+  update_mem: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 527.020 ; gain = 435.469
+INFO: [Common 17-206] Exiting updatemem at Thu Dec  3 15:11:23 2020...

@@ -1,0 +1,76 @@
+1) Robert Campbell, Aaron Sala, Joe Sloyan
+#include <unistd.h>
+
+int main(int argc, char* argv[]){
+    char buffer[] = "Hello world!\n";
+    write(STDOUT_FILENO,buffer, sizeof(buffer));
+    return 0;
+}
+
+#define bufferSize 100
+char buffer[bufferSize];
+//int count;
+
+int main ( int argc, char* argv[]){
+    while(1){
+        int max_args = 15;
+        int max_argv_size = max_args + 2; //one for argv[0], one for null term
+        char* cmd;
+        char* my_argv[max_argv_size];
+
+        printf("Input some string:");
+        char* input;
+        char* tok;
+        
+        input = fgets(buffer, 32, stdin);
+
+        if(input==NULL){
+            break;}
+
+        char *pos;
+        if ((pos=strchr(input, '\n')) != NULL){
+            *pos = '\0';
+        }
+
+        printf("Program 2 got: %s\n", input);
+
+        
+    }
+
+    return 0;
+}
+
+2)
+[campbellrobert@hopper2 Studio_7]$ ./pipe
+Input some string:Hello world!
+
+Program 2 got: 
+Input some string:
+Program 2 got: 
+Input some string:^C
+
+3)
+index 0 is read, index 1 is write
+
+4)
+newfd will close if the file descriptor was open before the call.
+
+5)
+dup2(fd[1], STDOUT_FILENO);
+dup2(fd[0], STDIN_FILENO);
+
+6)
+[campbellrobert@hopper2 Studio_7]$ ./pipe
+Input some string:Program 2 got: Hello world!
+
+.
+^C
+
+7)
+Input some string:Program 2 got: Hello world!
+Input some string:Program 2 got: 
+Input some string:[campbellrobert@hopper2 Studio_7]$
+
+8)
+It allows for more modularity, you can focus on one program with one type of output and have other programs repurpose it.
+On the other side of it, it allows for a programmer to use existing programs to complete tasks without needing any information as to how it works, including included system functions.

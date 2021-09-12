@@ -1,0 +1,16 @@
+1. Aaron Sala, Joe Sloyan, Robert Campbell
+
+2. The compression worked well for files with repeating patterns, such as the slu logo. It doesn't work very well for files that don't have any sort of pattern, such as test1
+
+3. 1mil random 1-byte compression ratio: 1000000/1598828 = .625458
+            4-byte compression ratio: 1000000/1247925 = .80133
+    1mil strong 1-byte compression ratio: 1000000/409084  = 2.44449
+            4-byte compression ratio: 1000000/748910  = 1.33527
+    1mil weak   1-byte compression ratio: 1000000/851464  = 1.17445
+            4-byte compression ratio: 1000000/1113415 = .898138
+
+4. real    7m5.286s
+
+5. real    0m44.737s
+
+6. Both the EC exercies were attempted

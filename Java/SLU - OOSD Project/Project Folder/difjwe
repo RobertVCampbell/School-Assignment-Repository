@@ -1,0 +1,291 @@
+commit bfaf19e21276cadf653304d99bf836304b47a8c8
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Sat Nov 23 13:12:33 2019 -0600
+
+    Updated GameLogicTest to account for correct start locations
+    Corrected variable errors in GameLogic
+    Corrected logic errors in Maze found with MazeTest
+
+commit dcbbb82400740a2b0218e3e4a2cc890eaece7038
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Fri Nov 22 12:10:55 2019 -0600
+
+    Added logic to Character and Game logic
+    Updated GameLogicTest
+
+commit c45de0c6c016375e1c255dfcdd5de6f8cb65ce60
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Fri Nov 22 12:08:42 2019 -0600
+
+    Replace MazePanel.java
+
+commit b3758c922da80811f5738b78a95626e678e3bc0a
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Thu Nov 21 17:14:52 2019 -0600
+
+    Replace MazePanel.java
+
+commit 98c9fd1db3d72d87c8134d8d7efe2787dd8024fb
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Thu Nov 21 15:53:18 2019 -0600
+
+    Replace MazePanel.java
+
+commit b74c3d52dbdc5a796118c0ac5dbea60e801e955d
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Thu Nov 21 15:52:49 2019 -0600
+
+    Replace MazePanel.java
+
+commit 846f9d4b2dfabaaccd30c33029484f236f892f0e
+Merge: b229e09 e25e753
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Thu Nov 21 13:49:09 2019 -0600
+
+    Merge branch 'master' of git.cs.slu.edu:courses/fall19/csci_2300/team_4
+    Didn't pull before pushing
+
+commit b229e09102867734cddc40f721d4aa90631295b9
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Thu Nov 21 13:47:45 2019 -0600
+
+    Removed class files from the repo
+    Removed redundant test files
+    Fixed compiler errors in
+      GameLogicTest
+      MazeTest
+      GameLogic
+
+commit e25e7536b406df747bac46abfeb42f396fce1b7c
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Thu Nov 21 13:36:55 2019 -0600
+
+    Delete GameLogicTest3.java
+    Redundant
+
+commit 255e107d50836ceafcf9a4d6d48594c4e0a93cd5
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Thu Nov 21 13:35:52 2019 -0600
+
+    Delete GameLogicTest3.class
+    Redundant
+
+commit d55f3475e1cdbabc4a45c2e94400ecb5b7103fbf
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Thu Nov 21 13:34:53 2019 -0600
+
+    Delete GameLogicTest2.java
+    Redundant and causing compiler errors
+
+commit 04535672bb5373ffc0661659cad04f721034e659
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Thu Nov 21 13:34:19 2019 -0600
+
+    Delete GameLogicTest1.java
+    Redundant and causing compiler errors
+
+commit 4fb48dd7161eb907166119753e17183bb47190be
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Thu Nov 21 13:19:32 2019 -0600
+
+    Changed GameLogicTest to be implemented in one file.
+        Missing Load and Save tests, but otherwise implemented.
+    Removed int turnCount variable from the TurnCounter interface.
+    Added a comment to GameLogic about using difficulty as an index.
+    Modified the commented out method in the UserMoveHandler interface.
+       Setting up a simplified way of handling user inputs.
+
+commit b9613f61ec298a98cb5b8f3af5a5676d5f8efd80
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Wed Nov 20 12:02:40 2019 -0600
+
+    Added logic to GameLogic and Maze, adjusted tests appropriately.
+    Corrected error in TurnCounter.
+    Added commented out potential method to UserMoveHandler.
+
+commit d2bf237331e70da2883006e9aa2228784af4a747
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Mon Nov 18 19:25:35 2019 -0600
+
+    Filled in the logic for the Maze class methods.
+
+commit 2798835c22e9dd8f7a07861b25f182a3c75cc3db
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Mon Nov 18 12:02:13 2019 -0600
+
+    Corrected TurnCounter file
+
+commit eacd3eaf130c7793021680f358ff1b3bd721b035
+Merge: 6c28a0e 6d0f4a7
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Mon Nov 18 11:50:21 2019 -0600
+
+    Merge branch 'master' of git.cs.slu.edu:courses/fall19/csci_2300/team_4
+    Resolveing Turn counter
+    Conflicts:
+    	model/TurnCounter.java
+
+commit 6c28a0ebf33f9fd89c84213f6f32ee3333a1a386
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Mon Nov 18 11:42:06 2019 -0600
+
+    Added mazetest class, added visibile function to maze
+
+commit 6d0f4a70bc76efcfdbc41d240222a087171c3207
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Mon Nov 18 11:29:14 2019 -0600
+
+    Upload New File
+
+commit ea6243726ac9193b2b6be8bc1780f97148cb0108
+Author: Adewunmi, Alexis A <alexis.adewunmi@slu.edu>
+Date:   Mon Nov 18 11:15:26 2019 -0600
+
+    Upload New File
+
+commit 759a074d3a85b23127c51545931fdf580aa0bff6
+Author: Adewunmi, Alexis A <alexis.adewunmi@slu.edu>
+Date:   Mon Nov 18 01:16:05 2019 -0600
+
+    Upload New File
+
+commit 4af82812447dc7ea4af8cda3de22bff358ee0166
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Sun Nov 17 21:35:11 2019 -0600
+
+    Update TurnCounter.java
+
+commit 72cf29ed7088d44c4cc2d4e04e082d69f6cfdf6f
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Sun Nov 17 19:50:27 2019 -0600
+
+    Replace MazePanel.java
+
+commit e85fdd71b99679363dd4b9849551e5d10451a11d
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Fri Nov 15 13:15:33 2019 -0600
+
+    Updated GameLogic to extend Observable class
+
+commit 96cef198957ae13a0a4b9bf0cc0df6fbcc78269d
+Merge: 5d10e0a 5a821e0
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Fri Nov 15 12:03:28 2019 -0600
+
+    Merge branch 'master' of git.cs.slu.edu:courses/fall19/csci_2300/team_4
+
+commit 5a821e0a07c4cfa01720a4bf64cec8576992ed6c
+Author: Kate Holdener <kate.holdener@slu.edu>
+Date:   Fri Nov 15 11:46:35 2019 -0600
+
+    ISP exercise for lab 12
+
+commit 5d10e0a1a13ba38275d79ae52dc98e42f8f61201
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Fri Nov 15 08:52:34 2019 -0600
+
+    Added UserMoveHandler and TurnCounter intefaces
+
+commit c20d88185653feb3d4ccf595e7a5a3d052a35519
+Author: Adewunmi, Alexis A <alexis.adewunmi@slu.edu>
+Date:   Fri Nov 15 06:16:17 2019 -0600
+
+    Upload New File
+
+commit 51226e27d90a94c109f5c1c2f43b32304e5271c2
+Author: Adewunmi, Alexis A <alexis.adewunmi@slu.edu>
+Date:   Fri Nov 15 06:16:01 2019 -0600
+
+    Delete InfoPanel.java
+
+commit 2f665b0f375cdb80562a4cd51275d32ab003324b
+Author: Adewunmi, Alexis A <alexis.adewunmi@slu.edu>
+Date:   Fri Nov 15 06:10:43 2019 -0600
+
+    Update InfoPanel.java
+
+commit e5c940a5697fe645da733c366202a4e417083501
+Author: Adewunmi, Alexis A <alexis.adewunmi@slu.edu>
+Date:   Fri Nov 15 06:07:04 2019 -0600
+
+    Update InfoPanel.java
+
+commit 6a26171e4b59f37b0fb8083ccd17b42483b4829f
+Author: Adewunmi, Alexis A <alexis.adewunmi@slu.edu>
+Date:   Fri Nov 15 06:03:30 2019 -0600
+
+    first round
+
+commit 2edb9789f03e7ce974eb51f5fd697777987f6649
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Thu Nov 14 23:47:44 2019 -0600
+
+    Upload New File
+
+commit 0cfcf71559b3a942c946834a8fa1751f09792c6d
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Wed Nov 13 15:27:17 2019 -0600
+
+    Made suggested changes to the model package.
+
+commit 453d729d648659b83ca9276b671b6c5fd009e22a
+Author: Kate Holdener <kate.holdener@slu.edu>
+Date:   Wed Nov 13 11:51:38 2019 -0600
+
+    lab 11 starter code
+
+commit 72d169c6c21cb562b0918f8fbad0a5cb133244ea
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Mon Nov 11 08:05:10 2019 -0600
+
+    Upload New File
+
+commit b74f05c76079bbfb0120c948c33da6ce32ef80a9
+Author: Martin, Jeffrey C <jeffrey.martin@slu.edu>
+Date:   Mon Nov 11 08:02:36 2019 -0600
+
+    Add new directory
+
+commit ec21a985a689eaef05939e73f2f3b63fd33e28b5
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Sun Nov 10 20:29:12 2019 -0600
+
+    Deleted model/Maze.class, model/GameLogic.class, model/Character.class files
+
+commit 625f0a301e7f9c03bef0f72708046f0de05bfc8e
+Author: Robert Campbell <robert.campbell.2@slu.edu>
+Date:   Sun Nov 10 20:28:11 2019 -0600
+
+    Fixed compiler errors for model
+
+commit 28f4496a1392670500cba56ff8567766649eae22
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Sun Nov 10 20:19:24 2019 -0600
+
+    More stubbing of GameLogic.
+
+commit ff99e814a5106e984fbfd949feb8864c86482847
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Sun Nov 10 20:01:09 2019 -0600
+
+    Added extra mutators to Character.
+    Started GameLogic.
+
+commit 737bd7cdba02d4924db5988f588a1ec57efc73b8
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Sun Nov 10 19:40:43 2019 -0600
+
+    Added Maze class
+
+commit 3163ce01fe2672495ccbccb1fa7b3634bafe6d8d
+Author: Campbell, Robert <robert.campbell.2@slu.edu>
+Date:   Sun Nov 10 19:27:40 2019 -0600
+
+    Added model and ui folders.
+    Added stubbed character class.
+
+commit 7303744422ed307a07867851e3f008b55b298f65
+Author: Kate Holdener <kate.holdener@slu.edu>
+Date:   Fri Oct 25 09:35:51 2019 -0500
+
+    add README

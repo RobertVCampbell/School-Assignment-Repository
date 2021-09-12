@@ -1,0 +1,36 @@
+1) Robert Campbell, Joe Sloyan, Aaron Sala
+2)
+[campbellrobert@hopper2 Studio_5]$ ./fork
+2769514
+[campbellrobert@hopper2 Studio_5]$ ./fork
+2769517
+[campbellrobert@hopper2 Studio_5]$ ./fork
+2769520
+3)
+2769842
+2769847
+4)
+On success, the PID of the child process  is  returned  in
+the  parent,  and 0 is returned in the child.  On failure,
+-1 is returned in the parent, no child process is created,
+and errno is set appropriately.
+5)
+Parent pid: 2771243
+Child pid: 2771252
+6)
+Expected it to just delay the output from the child.
+While it did do that, but it times out and starts accepting
+user input before the child displays its output.
+7)
+Now the child pid outputs first
+8)
+-rwxr-xr-x. 1 campbellrobert student 21048 Aug 31 11:12 fork
+-rw-r--r--. 1 campbellrobert student   428 Aug 31 11:12 fork.c
+-rw-r--r--. 1 campbellrobert student   613 Aug 31 11:10 Studio5.txt
+9)
+Child pid: 2775138
+total 23
+-rwxr-xr-x. 1 campbellrobert student 21432 Aug 31 11:20 fork
+-rw-r--r--. 1 campbellrobert student   655 Aug 31 11:19 fork.c
+-rw-r--r--. 1 campbellrobert student   844 Aug 31 11:19 Studio5.txt
+Parent pid: 2775137

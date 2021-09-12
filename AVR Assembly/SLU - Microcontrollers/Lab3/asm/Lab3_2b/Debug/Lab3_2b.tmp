@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega32A"</DEVICE>
+ <WORKING_DIR>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m32adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\Debug\Lab3_2b.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Lab3_2b.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Lab3_2b.map</FILE>
+  <FILE>Lab3_2b.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <Init><FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\main.asm</FILE><LINE>11</LINE></Init>
+  <Start><FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\main.asm</FILE><LINE>15</LINE></Start>
+  <Array><FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\main.asm</FILE><LINE>41</LINE></Array>
+  <loop1><FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\main.asm</FILE><LINE>23</LINE></loop1>
+  <skipadd><FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\main.asm</FILE><LINE>34</LINE></skipadd>
+  <end><FILE>C:\Users\campbellrobert\Documents\MICROLAB\Lab3_1a\Lab3_2b\main.asm</FILE><LINE>39</LINE></end>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,0 +1,4 @@
+This is the new file for Studio 2.
+I'm going to enter a few lines.
+This task is complete.
+This is another new line.

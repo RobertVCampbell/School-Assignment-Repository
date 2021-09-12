@@ -1,0 +1,10 @@
+     avg. pi      nprocs         elapsed wall-clock time
+     3.14168           2                         84.5675
+     avg. pi      nprocs         elapsed wall-clock time
+     3.14153           4                         31.6985
+     avg. pi      nprocs         elapsed wall-clock time
+     3.14164           8                         18.7399
+     avg. pi      nprocs         elapsed wall-clock time
+     3.14157          16                         8.16156
+     avg. pi      nprocs         elapsed wall-clock time
+      3.1417          32                         6.04192

@@ -1,0 +1,36 @@
+syntax for inbitstream
+	bitstream in = new inbitstream()?
+
+InBitSteam inputfile;
+inputfile.open("banana.myzip");
+
+int b = inputfile.read();
+
+same general questions about the functions?
+	will it just be in.open()?
+
+
+
+Continue running until an input ends or automatically close after each file?
+Prompt with text or expect the filename automatically?
+
+//read in to build tree
+
+//then decode:
+while (!inputfile.eof())
+{
+//decode one letter
+}
+
+
+
+Note for pseudocode: It'll be an outfile, not cout. So adjust the decode portion to:
+
+	if(i = 1){
+		int value = (int)it*;
+		out.write(value, 8);
+}
+
+BinaryTree<char> tree;
+
+cout << *position; //where position is an iterator

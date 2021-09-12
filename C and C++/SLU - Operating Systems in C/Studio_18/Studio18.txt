@@ -1,0 +1,61 @@
+1) Robert Campbell
+
+2) 6 minimum
+
+3) 8 pagefaults
+    3 faults to load A F B
+    1 fault replacing F with C
+    1 fault replacing B with E
+    1 fault replacing E with D
+    1 fault replacing C or D with B
+    1 fault replacing any of the pages with F
+
+4) 11 page faults
+    3 faults to load ABF
+    1 fault replacing A with C
+    1 fault replacing B with E
+    1 fault replacing F with A
+    1 fault replacing C with D
+    1 fault replacing E with C
+    1 fault replacing A with B
+    1 fault replacing D with A
+    1 fault replacing C with F 
+
+5) 11 page faults
+    3 faults to load AFB
+    1 fault replacing A with C
+    1 fault replacing F with E
+    1 fault replacing B with A
+    1 fault replacing C with D
+    1 fault replacing A with C
+    1 fault replacing E with B
+    1 fault replacing D with A
+    1 fault replacing C with F
+
+6) Reorganize the order in which different data is accessed so that new pages are needed less frequently.
+    16KB isn't much RAM, so upgrading memory would be another option.
+
+7) It is always advantageous because almost every page loaded is accessed multiple times.
+
+8) 9 page faults
+    3 faults loading DCB
+    1 fault replacing D with A
+    1 fault replacing C with D
+    1 fault replacing B with C
+    1 fault replacing A with E
+    1 fault replacing D with B
+    1 fault replacing C with A
+
+9) 9 page faults
+    3 faults loading DCBA
+    1 fault replacing D with E
+    1 fault replacing C with D
+    1 fault replacing B with C
+    1 fault replacing A with B
+    1 fault replacing E with A
+    1 fault replacing D with E
+
+10) I didn't expect it to be the exact same number, but there weren't any repeated page accesses or even 
+    recurring page accesses close together.
+
+11) Include an expected the developement cost and time of reoptimizing for new machines. 

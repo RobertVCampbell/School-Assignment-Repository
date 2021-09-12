@@ -1,0 +1,73 @@
+add []operators
+	- input: integer index
+	- return reference value (not the iterator)
+	keep track of off by 1
+	throw error if "index out of bounds"
+
+
+maximum
+	- input: none
+	- return the maximum value stored in the list
+	throw error if "list is empty"
+
+
+remove
+	- input: <Object> value
+	- void
+	Traverse the list and remove the first occurrence of that value
+	Decrement size
+	throw error if "list is empty"
+	
+	add linear search
+
+
+reverse
+	- input: none
+	- void
+	Suggestion: Either change the pointers (carefully) or traverse and change nodes
+
+
+sort
+	Implement a sorting algorithm
+
+
+
+main
+	- create and print float list
+		3.7 2.1 9.8 -3.9 5.3 -11.2 7.6
+	- Reverse and print
+	- Sort and print
+	
+	Nodes coontain
+		T type _data
+		pointer to node _previous
+		pointer to node _next
+	
+	List contains
+		_sent node
+		_sent->previous (last node)
+		_sent->next (first node)
+		_size (size of list, remember off by one indexing)
+	
+	Functions List:
+		bool empty()
+		int size()
+		iterator begin()
+		iterator end()
+			const version
+		void insert(iterator position, T element)
+		iterator erase(iterator position)
+			removes node
+			redirects previous and next nodes to point at each other
+			decrement's size
+			returns iterator pointing to the node after the deleted node
+		void push_front(T element)
+		void pop_front()
+		void push_back(T element)
+		void pop_back()
+		void print_list()
+		operator=(const List& other) //copy constructor
+		bool operator== (List other)
+		
+		
+

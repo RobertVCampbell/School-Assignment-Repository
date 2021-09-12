@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/work/temp_sensor/temp_sensor.srcs/sources_1/new/i2c_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2c_master'
+WARNING: [VRFC 10-471] case choice must be a locally static expression [C:/work/temp_sensor/temp_sensor.srcs/sources_1/new/i2c_master.vhd:100]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [C:/work/temp_sensor/temp_sensor.srcs/sources_1/new/i2c_master.vhd:103]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [C:/work/temp_sensor/temp_sensor.srcs/sources_1/new/i2c_master.vhd:106]

@@ -1,0 +1,56 @@
+1) Robert Campbell, Joe Sloyan, Aaron Sala
+2)
+
+Input some string:This is a test string
+This is a test string
+
+3)
+first call you input a string, subsequent calls use NULL in that parameter
+
+4)
+Space
+
+5)
+Input some string:This is some string
+This is some string
+
+First token is: This
+
+6)
+Input some string:This is some string
+This is some string
+
+Token 0 is: This
+Token 1 is: is
+Token 2 is: some
+Token 3 is: string
+
+7)
+    char *pos;
+    if ((pos=strchr(input, '\n')) != NULL){
+        *pos = '\0';
+    }
+8)
+
+9)
+cmd = strtok(input, " " );
+
+10)
+    my_argv[0] = cmd;
+    int count = 1;
+
+    tok = strtok(NULL, " " );
+    while(tok != NULL){
+        my_argv[count] = tok;
+        tok = strtok(NULL, " ");
+        count++;
+    }
+    my_argv[count] = '\0';
+
+11)
+Input some string:ls -l
+ls -l
+total 25
+-rwxr-xr-x. 1 campbellrobert student 22656 Sep  2 12:19 studio
+-rw-r--r--. 1 campbellrobert student   755 Sep  2 12:19 Studio6.txt
+-rw-r--r--. 1 campbellrobert student   873 Sep  2 12:19 studio.c

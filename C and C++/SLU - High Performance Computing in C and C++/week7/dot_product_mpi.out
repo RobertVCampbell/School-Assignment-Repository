@@ -1,0 +1,12 @@
+           n  dot product      nprocs         elapsed wall-clock time
+   500000000       5e+08           1                          8.5413
+           n  dot product      nprocs         elapsed wall-clock time
+   500000000       5e+08           2                         4.73123
+           n  dot product      nprocs         elapsed wall-clock time
+   500000000       5e+08           4                         2.61787
+           n  dot product      nprocs         elapsed wall-clock time
+   500000000       5e+08           8                          1.4876
+           n  dot product      nprocs         elapsed wall-clock time
+   500000000       5e+08          16                        0.864581
+           n  dot product      nprocs         elapsed wall-clock time
+   500000000       5e+08          32                        0.650014

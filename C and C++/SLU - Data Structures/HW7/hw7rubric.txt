@@ -1,0 +1,10 @@
+Name: Robert Campbell
+Total: 9.75/10
+
+Readme: .25/.5
+Bit sparse! Did some get cut off?  Was asking for a bit more than this!
+
+Test file: 2/2
+
+Code for remove: 7.5/7.5
+Good - passed all my tests.

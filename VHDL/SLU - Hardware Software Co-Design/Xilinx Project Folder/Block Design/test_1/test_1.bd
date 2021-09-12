@@ -1,0 +1,33 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a35tcpg236-1",
+      "name": "test_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1"
+    },
+    "design_tree": {
+      "test_0": ""
+    },
+    "components": {
+      "test_0": {
+        "vlnv": "xilinx.com:module_ref:test:1.0",
+        "xci_name": "test_1_test_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "test",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I"
+          },
+          "b": {
+            "direction": "O"
+          }
+        }
+      }
+    }
+  }
+}

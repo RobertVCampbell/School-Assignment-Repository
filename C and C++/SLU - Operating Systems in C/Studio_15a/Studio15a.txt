@@ -1,0 +1,47 @@
+1) Robert Campbell
+
+2) It doesn't work because it references memory
+addresses outside of the range the program is
+loaded into.
+
+3)
+movl	($0x1100),	%eax
+movl	($0x1104),	%ebx
+movl	%eax,		($0x1104)
+movl	%ebx,		($0x1100)
+
+4)
+    Part 1: 0x0000 - 0x0FFF
+    Part 2: 0x1000 - 0x1FFF
+    Part 3: 0x2000 - 0x2FFF
+    Part 4: 0x3000 - 0x3FFF
+
+5)  movl from, into
+    movl $0x1234,	($0x26)
+The movl instruction from the other program changes the destination address from
+    $0x50 to $0x1234.
+When the first program executes its jump, it jmps to mem address 0x1234 instead of
+    address 0x50.
+
+6)
+No because the machine handles addressing within the program's limited addrsss space.
+
+7)
+The first program executes properly and $0x1234 into memory address 0x1026 instead of 0x26.
+
+8)
+___________
+|0x3000 - 0x3fff available
+|________
+|
+|
+|0x1000-0x2fff Program B
+|_______
+|0x0000-0x0fff Available
+|___________
+
+9)
+Beacuse there isn't 0x2000Bytes of contiguous memory.
+
+10)
+Compaction, which moves empty space and program space together.
